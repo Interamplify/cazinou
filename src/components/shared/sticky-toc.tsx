@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 
 interface TocItem {
   id: string;
@@ -9,7 +9,20 @@ interface TocItem {
 
 export function StickyToc({ items }: { items: TocItem[] }) {
   const [activeId, setActiveId] = useState('');
+  const buttonRefs = useRef<Map<string, HTMLButtonElement>>(new Map());
 
+  const setButtonRef = useCallback(
+    (id: string) => (el: HTMLButtonElement | null) => {
+      if (el) {
+        buttonRefs.current.set(id, el);
+      } else {
+        buttonRefs.current.delete(id);
+      }
+    },
+    [],
+  );
+
+  // Observe sections to track active ID
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -19,7 +32,7 @@ export function StickyToc({ items }: { items: TocItem[] }) {
           }
         }
       },
-      { rootMargin: '-80px 0px -60% 0px', threshold: 0 }
+      { rootMargin: '-80px 0px -60% 0px', threshold: 0 },
     );
 
     for (const item of items) {
@@ -29,6 +42,15 @@ export function StickyToc({ items }: { items: TocItem[] }) {
 
     return () => observer.disconnect();
   }, [items]);
+
+  // Auto-scroll the TOC bar to keep active button visible
+  useEffect(() => {
+    if (!activeId) return;
+    const btn = buttonRefs.current.get(activeId);
+    if (btn) {
+      btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+  }, [activeId]);
 
   const handleClick = (id: string) => {
     const el = document.getElementById(id);
@@ -47,6 +69,7 @@ export function StickyToc({ items }: { items: TocItem[] }) {
           {items.map((item) => (
             <li key={item.id} className="flex-shrink-0">
               <button
+                ref={setButtonRef(item.id)}
                 onClick={() => handleClick(item.id)}
                 className={`whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-mono font-semibold transition-colors ${
                   activeId === item.id
