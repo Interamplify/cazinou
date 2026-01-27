@@ -1,0 +1,89 @@
+import type { Metadata } from 'next';
+import { SITE_URL } from '@/lib/constants';
+import { generateFAQJsonLd } from '@/lib/seo-helpers';
+import { JsonLd } from '@/components/shared/json-ld';
+import { faraDepunereFaqs, tocItems } from '@/data/bonus-fara-depunere';
+
+import { HeroSection } from './_components/hero-section';
+import { StickyToc } from './_components/sticky-toc';
+import { CasinoListingSection } from './_components/casino-listing-section';
+import { QuickPicksSection } from './_components/quick-picks-section';
+import { ReviewsSection } from './_components/reviews-section';
+import { ActivationGuideSection } from './_components/activation-guide-section';
+import { WageringSection } from './_components/wagering-section';
+import { MethodologySection } from './_components/methodology-section';
+import { ProsConsSection } from './_components/pros-cons-section';
+import { PaymentMethodsSection } from './_components/payment-methods-section';
+import { WithdrawalSection } from './_components/withdrawal-section';
+import { FaqSection } from './_components/faq-section';
+import { ResponsibleGamingSection } from './_components/responsible-gaming-section';
+
+export const metadata: Metadata = {
+  title: 'Top Cazinouri Internaționale cu Bonus Fără Depunere 2026',
+  description:
+    'Top 10 cazinouri internaționale cu bonus fără depunere 2026. Ghid complet: cum obții bani gratis la înregistrare, condiții de rulaj, metode de retragere și greșeli de evitat.',
+  alternates: {
+    canonical: '/bonus/fara-depunere/',
+  },
+  openGraph: {
+    title: 'Top Cazinouri Internaționale cu Bonus Fără Depunere 2026',
+    description:
+      'Top 10 cazinouri internaționale cu bonus fără depunere 2026. Ghid complet: cum obții bani gratis la înregistrare, condiții de rulaj, metode de retragere și greșeli de evitat.',
+    type: 'article',
+  },
+};
+
+export default function BonusFaraDepunerePage() {
+  const faqJsonLd = generateFAQJsonLd(faraDepunereFaqs);
+
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Top Cazinouri Internaționale cu Bonus Fără Depunere 2026',
+    url: `${SITE_URL}/bonus/fara-depunere/`,
+    author: {
+      '@type': 'Person',
+      name: 'Cristian Radulescu',
+      url: `${SITE_URL}/autori/cristian-radulescu/`,
+    },
+    datePublished: '2026-01-27T06:38:00.000Z',
+    dateModified: '2026-01-27T06:38:00.000Z',
+    inLanguage: 'ro',
+  };
+
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Acasă', item: SITE_URL },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Bonus Fără Depunere',
+        item: `${SITE_URL}/bonus/fara-depunere/`,
+      },
+    ],
+  };
+
+  return (
+    <article className="bg-white">
+      <JsonLd data={articleJsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
+      <JsonLd data={faqJsonLd} />
+
+      <HeroSection />
+      <StickyToc items={tocItems} />
+      <CasinoListingSection />
+      <QuickPicksSection />
+      <ReviewsSection />
+      <ActivationGuideSection />
+      <WageringSection />
+      <MethodologySection />
+      <ProsConsSection />
+      <PaymentMethodsSection />
+      <WithdrawalSection />
+      <FaqSection />
+      <ResponsibleGamingSection />
+    </article>
+  );
+}

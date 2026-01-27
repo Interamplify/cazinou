@@ -1,0 +1,78 @@
+'use client';
+
+import Link from 'next/link';
+import Image from 'next/image';
+import { mainNavItems } from '@/data/navigation';
+import { MobileNav } from './mobile-nav';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from '@/components/ui/navigation-menu';
+
+export function Header() {
+  return (
+    <header className="fixed z-40 h-16 top-0 left-0 right-0 w-full bg-white/90 flex items-center backdrop-blur-md border-b border-gray-100 shadow-sm">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between gap-6">
+          <Link href="/" className="flex items-center gap-2 flex-shrink-0">
+            <Image
+              src="/images/logos/cazinou-logo.webp"
+              alt="cazinou.io"
+              width={140}
+              height={38}
+              className="h-8 w-auto sm:h-9"
+              priority
+            />
+          </Link>
+
+          <NavigationMenu className="hidden lg:flex flex-1 justify-end">
+            <NavigationMenuList>
+              {mainNavItems.map((item) =>
+                item.children ? (
+                  <NavigationMenuItem key={item.label}>
+                    <NavigationMenuTrigger className="px-3 py-2 text-sm font-medium text-gray-600 hover:text-orange-500 bg-transparent hover:bg-orange-50/60 data-[state=open]:bg-orange-50/60 data-[state=open]:text-orange-500 rounded-lg">
+                      {item.label}
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent className="min-w-[220px]">
+                      <ul className="py-1">
+                        {item.children.map((child) => (
+                          <li key={child.href}>
+                            <NavigationMenuLink asChild>
+                              <Link
+                                href={child.href}
+                                className="block px-4 py-2.5 text-sm font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 transition-colors"
+                              >
+                                {child.label}
+                              </Link>
+                            </NavigationMenuLink>
+                          </li>
+                        ))}
+                      </ul>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                ) : (
+                  <NavigationMenuItem key={item.label}>
+                    <NavigationMenuLink asChild>
+                      <Link
+                        href={item.href}
+                        className="px-3 py-2 text-sm font-medium text-gray-600 hover:text-orange-500 transition-colors rounded-lg hover:bg-orange-50/60 inline-flex items-center"
+                      >
+                        {item.label}
+                      </Link>
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                ),
+              )}
+            </NavigationMenuList>
+          </NavigationMenu>
+
+          <MobileNav />
+        </div>
+      </div>
+    </header>
+  );
+}
