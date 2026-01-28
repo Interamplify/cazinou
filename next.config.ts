@@ -5,6 +5,20 @@ const nextConfig: NextConfig = {
   images: {
     formats: ['image/webp'],
   },
+  async redirects() {
+    return [
+      {
+        source: '/casino/billionairespin-casino',
+        destination: '/bonus/billionairespin-casino/',
+        permanent: true,
+      },
+      {
+        source: '/casino/billionairespin-casino/',
+        destination: '/bonus/billionairespin-casino/',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

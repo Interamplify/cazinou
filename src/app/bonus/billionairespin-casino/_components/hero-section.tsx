@@ -1,0 +1,76 @@
+import { CalendarDays, TrendingUp, Award, Sparkles } from 'lucide-react';
+
+export function HeroSection() {
+  return (
+    <section className="relative bg-gradient-to-b from-orange-50/70 via-white to-white">
+      <div className="container mx-auto max-w-7xl py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 text-center">
+        {/* Breadcrumb */}
+        <nav aria-label="Breadcrumb" className="mb-6">
+          <ol className="flex items-center justify-center gap-1.5 text-sm font-mono text-gray-400">
+            <li>
+              <a href="/" className="hover:text-orange-600 transition-colors">
+                Acas&#259;
+              </a>
+            </li>
+            <li>/</li>
+            <li>
+              <a href="/bonus/" className="hover:text-orange-600 transition-colors">
+                Bonus
+              </a>
+            </li>
+            <li>/</li>
+            <li className="text-gray-900 font-semibold">Billionairespin Casino Bonus</li>
+          </ol>
+        </nav>
+
+        {/* Date */}
+        <div className="flex items-center justify-center gap-2 text-sm text-gray-400 mb-8">
+          <CalendarDays className="h-4 w-4 text-orange-400" />
+          <span>Actualizat: Ianuarie 2026</span>
+        </div>
+
+        {/* Main heading */}
+        <h1 className="mb-5 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl font-mono leading-[1.1]">
+          Bonus Billionairespin Casino 2026 &#8212;{' '}
+          <span className="text-orange-500">255% p&#226;n&#259; la 2.250 RON</span> + 250 Rotiri Gratuite
+        </h1>
+
+        {/* Intro */}
+        <p className="text-base sm:text-lg text-gray-500 leading-relaxed max-w-3xl mx-auto mb-8">
+          Pachetul de bun venit Billionairespin Casino &#238;&#539;i ofer&#259; un bonus masiv de 255%
+          p&#226;n&#259; la 2.250 RON &#537;i 250 rotiri gratuite distribuite pe primele
+          3 depuneri. Un start ideal pentru juc&#259;torii din Rom&#226;nia care vor
+          s&#259; exploreze o platform&#259; crypto-friendly cu rulaj competitiv.
+        </p>
+
+        {/* Quick stats pills */}
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
+          <div className="flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3 py-1.5 shadow-sm">
+            <TrendingUp className="h-3.5 w-3.5 text-orange-500" />
+            <span className="text-xs font-mono font-semibold text-gray-700">255% Bonus</span>
+          </div>
+          <div className="flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3 py-1.5 shadow-sm">
+            <Award className="h-3.5 w-3.5 text-amber-500" />
+            <span className="text-xs font-mono font-semibold text-gray-700">2.250 RON Maxim</span>
+          </div>
+          <div className="flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3 py-1.5 shadow-sm">
+            <Sparkles className="h-3.5 w-3.5 text-green-500" />
+            <span className="text-xs font-mono font-semibold text-gray-700">250 Rotiri Gratuite</span>
+          </div>
+        </div>
+
+        {/* CTA Button */}
+        <div className="flex justify-center">
+          <a
+            href="/go/billionairespin-casino"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-orange-500 px-8 py-4 text-base font-bold font-mono text-white hover:bg-orange-600 transition-all hover:scale-105 shadow-lg hover:shadow-xl"
+          >
+            Revindic&#259; Bonusul
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
