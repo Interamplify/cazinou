@@ -44,16 +44,20 @@ const bonusPages = [
     badge: 'Free Spins',
     badgeColor: 'bg-orange-100 text-orange-700',
   },
+];
+
+const casinoBonuses = [
   {
     title: 'Bonus Billionairespin Casino',
+    casinoName: 'Billionairespin Casino',
     href: '/bonus/billionairespin-casino/',
-    desc: 'Pachet complet 255% până la 2.250 RON + 250 rotiri gratuite pe 3 depuneri. Cashback 25%, VIP cu 4 niveluri.',
-    stats: ['255% Bonus', '250 Rotiri Gratuite', 'Cashback 25%'],
+    desc: 'Pachet complet 255% până la 2.250 RON + 250 rotiri gratuite pe 3 depuneri. Cashback săptămânal 25%, program VIP cu 4 niveluri, turnee cu premii de 10.000€.',
+    stats: ['255% Bonus', '2.250 RON', '250 Rotiri', 'Cashback 25%'],
     Icon: Sparkles,
     color: 'border-purple-200 bg-purple-50/30 hover:border-purple-300',
     iconBg: 'bg-purple-100',
     iconColor: 'text-purple-600',
-    badge: 'Casino Specific',
+    badge: 'Pachet Complet',
     badgeColor: 'bg-purple-100 text-purple-700',
   },
 ];
@@ -171,7 +175,7 @@ export default function BonusPage() {
             </p>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-2 max-w-5xl mx-auto">
+          <div className="grid gap-6 lg:grid-cols-2 max-w-4xl mx-auto">
             {bonusPages.map((page) => (
               <Link
                 key={page.href}
@@ -218,8 +222,69 @@ export default function BonusPage() {
         </div>
       </section>
 
-      {/* How we evaluate */}
+      {/* Casino-specific bonuses */}
       <section className="py-14 lg:py-20 bg-gray-50/60">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-10 text-center">
+            <div className="w-10 h-1 bg-orange-500 rounded-full mb-4 mx-auto" />
+            <h2 className="text-2xl sm:text-3xl font-bold font-mono text-gray-900">
+              Bonusuri pe Casino
+            </h2>
+            <p className="text-base text-gray-500 mt-2 max-w-2xl mx-auto">
+              Analize detaliate ale pachetelor de bonus de la cazinouri specifice — rulaj, cashback,
+              VIP și toate promoțiile permanente.
+            </p>
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-2 max-w-4xl mx-auto">
+            {casinoBonuses.map((casino) => (
+              <Link
+                key={casino.href}
+                href={casino.href}
+                className={`group rounded-2xl border-2 p-6 lg:p-8 transition-all hover:shadow-lg ${casino.color}`}
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div
+                    className={`flex h-11 w-11 items-center justify-center rounded-full ${casino.iconBg}`}
+                  >
+                    <casino.Icon className={`h-5 w-5 ${casino.iconColor}`} />
+                  </div>
+                  <div>
+                    <span
+                      className={`text-[10px] font-mono font-bold uppercase tracking-widest px-2 py-0.5 rounded-full ${casino.badgeColor}`}
+                    >
+                      {casino.badge}
+                    </span>
+                    <h3 className="text-xl font-bold font-mono text-gray-900 mt-1">
+                      {casino.title}
+                    </h3>
+                  </div>
+                </div>
+
+                <p className="text-sm text-gray-700 leading-relaxed mb-5">{casino.desc}</p>
+
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {casino.stats.map((stat) => (
+                    <span
+                      key={stat}
+                      className="text-xs font-mono font-semibold text-gray-600 bg-white/80 border border-gray-200 rounded-full px-2.5 py-1"
+                    >
+                      {stat}
+                    </span>
+                  ))}
+                </div>
+
+                <span className="inline-flex items-center gap-1.5 text-sm font-bold font-mono text-purple-600 group-hover:gap-2.5 transition-all">
+                  Vezi Detalii Bonus <ArrowRight className="h-4 w-4" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How we evaluate */}
+      <section className="py-14 lg:py-20">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-10 text-center">
             <div className="w-10 h-1 bg-orange-500 rounded-full mb-4 mx-auto" />
