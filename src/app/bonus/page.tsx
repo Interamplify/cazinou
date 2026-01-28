@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { SITE_URL } from '@/lib/constants';
 import { JsonLd } from '@/components/shared/json-ld';
-import { CalendarDays, Gift, RotateCcw, ArrowRight, Shield, TrendingUp, Award, Sparkles } from 'lucide-react';
+import { CalendarDays, Gift, RotateCcw, ArrowRight, Shield, TrendingUp, Award } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Cele Mai Bune Bonusuri la Cazinouri Internaționale 2026',
@@ -48,17 +49,11 @@ const bonusPages = [
 
 const casinoBonuses = [
   {
-    title: 'Bonus Billionairespin Casino',
-    casinoName: 'Billionairespin Casino',
+    name: 'Billionairespin Casino',
     href: '/bonus/billionairespin-casino/',
-    desc: 'Pachet complet 255% până la 2.250 RON + 250 rotiri gratuite pe 3 depuneri. Cashback săptămânal 25%, program VIP cu 4 niveluri, turnee cu premii de 10.000€.',
-    stats: ['255% Bonus', '2.250 RON', '250 Rotiri', 'Cashback 25%'],
-    Icon: Sparkles,
-    color: 'border-purple-200 bg-purple-50/30 hover:border-purple-300',
-    iconBg: 'bg-purple-100',
-    iconColor: 'text-purple-600',
-    badge: 'Pachet Complet',
-    badgeColor: 'bg-purple-100 text-purple-700',
+    logo: '/images/casinos/billionairespin-casino.webp',
+    bonus: '255% + 250 Rotiri',
+    maxAmount: '2.250 RON',
   },
 ];
 
@@ -231,52 +226,51 @@ export default function BonusPage() {
               Bonusuri pe Casino
             </h2>
             <p className="text-base text-gray-500 mt-2 max-w-2xl mx-auto">
-              Analize detaliate ale pachetelor de bonus de la cazinouri specifice — rulaj, cashback,
-              VIP și toate promoțiile permanente.
+              Analize detaliate ale pachetelor de bonus de la cazinouri specifice
             </p>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-2 max-w-4xl mx-auto">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 max-w-6xl mx-auto">
             {casinoBonuses.map((casino) => (
               <Link
                 key={casino.href}
                 href={casino.href}
-                className={`group rounded-2xl border-2 p-6 lg:p-8 transition-all hover:shadow-lg ${casino.color}`}
+                className="group rounded-xl border-2 border-gray-200 bg-white p-5 transition-all hover:shadow-lg hover:border-orange-300"
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <div
-                    className={`flex h-11 w-11 items-center justify-center rounded-full ${casino.iconBg}`}
-                  >
-                    <casino.Icon className={`h-5 w-5 ${casino.iconColor}`} />
+                {/* Casino Logo */}
+                <div className="relative h-16 mb-4 flex items-center justify-center">
+                  <Image
+                    src={casino.logo}
+                    alt={`${casino.name} logo`}
+                    width={140}
+                    height={64}
+                    className="object-contain"
+                  />
+                </div>
+
+                {/* Casino Name */}
+                <h3 className="text-center font-mono font-bold text-gray-900 text-sm mb-3">
+                  {casino.name}
+                </h3>
+
+                {/* Bonus Info */}
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center justify-between text-xs">
+                    <span className="text-gray-500">Bonus:</span>
+                    <span className="font-mono font-semibold text-orange-600">{casino.bonus}</span>
                   </div>
-                  <div>
-                    <span
-                      className={`text-[10px] font-mono font-bold uppercase tracking-widest px-2 py-0.5 rounded-full ${casino.badgeColor}`}
-                    >
-                      {casino.badge}
-                    </span>
-                    <h3 className="text-xl font-bold font-mono text-gray-900 mt-1">
-                      {casino.title}
-                    </h3>
+                  <div className="flex items-center justify-between text-xs">
+                    <span className="text-gray-500">Până la:</span>
+                    <span className="font-mono font-semibold text-gray-900">{casino.maxAmount}</span>
                   </div>
                 </div>
 
-                <p className="text-sm text-gray-700 leading-relaxed mb-5">{casino.desc}</p>
-
-                <div className="flex flex-wrap gap-2 mb-5">
-                  {casino.stats.map((stat) => (
-                    <span
-                      key={stat}
-                      className="text-xs font-mono font-semibold text-gray-600 bg-white/80 border border-gray-200 rounded-full px-2.5 py-1"
-                    >
-                      {stat}
-                    </span>
-                  ))}
+                {/* CTA */}
+                <div className="text-center">
+                  <span className="inline-flex items-center gap-1 text-xs font-bold font-mono text-orange-600 group-hover:gap-1.5 transition-all">
+                    Vezi Bonus <ArrowRight className="h-3 w-3" />
+                  </span>
                 </div>
-
-                <span className="inline-flex items-center gap-1.5 text-sm font-bold font-mono text-purple-600 group-hover:gap-2.5 transition-all">
-                  Vezi Detalii Bonus <ArrowRight className="h-4 w-4" />
-                </span>
               </Link>
             ))}
           </div>
