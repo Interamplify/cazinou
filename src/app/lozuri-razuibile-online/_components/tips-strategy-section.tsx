@@ -2,38 +2,38 @@ import { Shield, PlayCircle, DollarSign, Ban, BarChart, Heart } from 'lucide-rea
 
 const tips = [
   {
-    title: 'Verifica RTP-ul',
-    desc: 'Joaca doar lozuri cu RTP > 94%. Evita jocurile cu RTP sub 90% — pierzi prea mult pe termen lung.',
+    title: 'Verific&#259; RTP-ul',
+    desc: 'Joac&#259; doar lozuri cu RTP > 94%. Evit&#259; jocurile cu RTP sub 90% — pierzi prea mult pe termen lung.',
     Icon: Shield,
     color: 'border-green-200 bg-green-50/30',
   },
   {
-    title: 'Testeaza in Demo',
-    desc: 'Foloseste modul gratuit pentru a intelege mecanica jocului si a verifica tabela de plati inainte de a paria bani reali.',
+    title: 'Testeaz&#259; &#238;n Demo',
+    desc: 'Folose&#537;te modul gratuit pentru a &#238;n&#539;elege mecanica jocului &#537;i a verifica tabela de pl&#259;&#539;i &#238;nainte de a paria bani reali.',
     Icon: PlayCircle,
     color: 'border-blue-200 bg-blue-50/30',
   },
   {
-    title: 'Stabileste Limite',
-    desc: 'Seteaza un buget lunar fix pentru lozuri. Foloseste functiile de limita de depunere si auto-excludere din cont.',
+    title: 'Stabile&#537;te Limite',
+    desc: 'Seteaz&#259; un buget lunar fix pentru lozuri. Folose&#537;te func&#539;iile de limit&#259; de depunere &#537;i auto-excludere din cont.',
     Icon: DollarSign,
     color: 'border-amber-200 bg-amber-50/30',
   },
   {
-    title: 'Evita Recuperarea',
-    desc: 'Nu incerca niciodata sa recuperezi pierderile jucand mai mult. Pierderea face parte din joc — accept-o si opreste-te.',
+    title: 'Evit&#259; Recuperarea',
+    desc: 'Nu &#238;ncerca niciodat&#259; s&#259; recuperezi pierderile juc&#226;nd mai mult. Pierderea face parte din joc — accept&#259;-o &#537;i opre&#537;te-te.',
     Icon: Ban,
     color: 'border-red-200 bg-red-50/30',
   },
   {
-    title: 'Alege Volatilitate Potrivita',
-    desc: 'Buget mic? Alege volatilitate scazuta pentru sesiuni mai lungi. Risc mare? Volatilitate ridicata pentru premii mari.',
+    title: 'Alege Volatilitate Potrivit&#259;',
+    desc: 'Buget mic? Alege volatilitate sc&#259;zut&#259; pentru sesiuni mai lungi. Risc mare? Volatilitate ridicat&#259; pentru premii mari.',
     Icon: BarChart,
     color: 'border-purple-200 bg-purple-50/30',
   },
   {
-    title: 'Joaca Responsabil',
-    desc: 'Lozurile sunt divertisment, nu sursa de venit. Joaca doar cand esti relaxat si cu bani pe care iti permiti sa-i pierzi.',
+    title: 'Joac&#259; Responsabil',
+    desc: 'Lozurile sunt divertisment, nu surs&#259; de venit. Joac&#259; doar c&#226;nd e&#537;ti relaxat &#537;i cu bani pe care &#238;&#539;i permi&#539;i s&#259;-i pierzi.',
     Icon: Heart,
     color: 'border-orange-200 bg-orange-50/30',
   },
@@ -46,10 +46,10 @@ export function TipsStrategySection() {
         <div className="mb-8 text-center">
           <div className="w-10 h-1 bg-orange-500 rounded-full mb-4 mx-auto" />
           <h2 className="text-2xl sm:text-3xl font-bold font-mono text-gray-900">
-            Sfaturi si Strategii pentru a Juca in Avantaj
+            Sfaturi &#537;i Strategii pentru a Juca &#238;n Avantaj
           </h2>
           <p className="text-base text-gray-500 mt-2 max-w-2xl mx-auto">
-            Desi rezultatul e aleatoriu, aceste tactici te ajuta sa maximizezi placerea si sa
+            De&#537;i rezultatul e aleatoriu, aceste tactici te ajut&#259; s&#259; maximizezi pl&#259;cerea &#537;i s&#259;
             gestionezi bugetul eficient
           </p>
         </div>

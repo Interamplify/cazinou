@@ -5,7 +5,7 @@ const games = [
     name: 'Scratch Match',
     provider: 'Evoplay',
     description:
-      'Joc de tip numar cu 5 numere norocoase intre 0-100. Alegi sa joci 10 sau 20 de numere, fiecare cu un multiplicator variabil. Bonus special la potrivirea 777 cu super premiu. RTP 96%, premiu maxim 500x.',
+      'Joc de tip num&#259;r cu 5 numere norocoase &#238;ntre 0-100. Alegi s&#259; joci 10 sau 20 de numere, fiecare cu un multiplicator variabil. Bonus special la potrivirea 777 cu super premiu. RTP 96%, premiu maxim 500x.',
     features: [
       '5 numere norocoase',
       '10 sau 20 numere jucate',
@@ -22,7 +22,7 @@ const games = [
     name: 'Scratch Alpaca',
     provider: 'BGaming',
     description:
-      'Loz clasic cu 3 variante: Bronze, Silver, Gold. Potriveste 3 simboluri identice pentru a castiga. Valoarea numerelor se inmulteste cu miza. Functii Auto Play si Scratch All pentru joc rapid.',
+      'Loz clasic cu 3 variante: Bronze, Silver, Gold. Potrive&#537;te 3 simboluri identice pentru a c&#226;&#537;tiga. Valoarea numerelor se &#238;nmul&#539;e&#537;te cu miza. Func&#539;ii Auto Play &#537;i Scratch All pentru joc rapid.',
     features: [
       '3 variante (Bronze/Silver/Gold)',
       'Auto Play',
@@ -39,8 +39,8 @@ const games = [
     name: 'Demon Train Scratch',
     provider: 'Relax Gaming',
     description:
-      'Loz tematic dark cu premiu maxim 500x. Feature special "Wild Ride" activeaza multiplicatori progresivi. Design intunecat cu grafica de inalta calitate si animatii fluide.',
-    features: ['Tema dark', 'Wild Ride feature', 'Multiplicatori progresivi', 'Grafica HD'],
+      'Loz tematic dark cu premiu maxim 500x. Feature special "Wild Ride" activeaz&#259; multiplicatori progresivi. Design &#238;ntunecat cu grafic&#259; de &#238;nalt&#259; calitate &#537;i anima&#539;ii fluide.',
+    features: ['Tem&#259; dark', 'Wild Ride feature', 'Multiplicatori progresivi', 'Grafic&#259; HD'],
     rtp: '94%',
     maxWin: '500x',
     minBet: '0.50€',
@@ -51,10 +51,10 @@ const games = [
     name: 'The Bank Heist Scratchcard',
     provider: 'Dragon Gaming',
     description:
-      'Joc tematic cu jaful unei banci. Simbolul Vault trigger-eaza pana la 10 scratch-uri gratuite. Premiu maxim 500x miza, volatilitate medie, ideal pentru sesiuni lungi.',
+      'Joc tematic cu jaful unei b&#259;nci. Simbolul Vault trigger-eaz&#259; p&#226;n&#259; la 10 scratch-uri gratuite. Premiu maxim 500x miza, volatilitate medie, ideal pentru sesiuni lungi.',
     features: [
-      'Tema heist',
-      'Pana la 10 scratch-uri gratuite',
+      'Tem&#259; heist',
+      'P&#226;n&#259; la 10 scratch-uri gratuite',
       'Simbol Vault special',
       'Volatilitate medie',
     ],
@@ -99,7 +99,7 @@ export function FeaturedGamesSection() {
             Jocuri Populare de Lozuri Razuibile
           </h2>
           <p className="mx-auto max-w-3xl text-base leading-relaxed text-gray-700">
-            Analiza celor mai apreciate scratch cards disponibile la cazinouri internationale
+            Analiza celor mai apreciate scratch cards disponibile la cazinouri interna&#539;ionale
           </p>
         </div>
 

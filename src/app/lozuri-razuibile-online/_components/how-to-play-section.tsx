@@ -4,31 +4,31 @@ const steps = [
   {
     step: 1,
     title: 'Alege Cazinoul',
-    desc: 'Selecteaza un cazinou din lista noastra verificata. Verifica licenta, metodele de plata si bonusurile disponibile.',
+    desc: 'Selecteaz&#259; un cazinou din lista noastr&#259; verificat&#259;. Verific&#259; licen&#539;a, metodele de plat&#259; &#537;i bonusurile disponibile.',
     Icon: Shield,
   },
   {
     step: 2,
-    title: 'Inregistreaza-te',
-    desc: 'Creeaza cont cu email si parola. Completeaza verificarea KYC (buletin + dovada adresa) pentru retrageri rapide.',
+    title: '&#206;nregistreaz&#259;-te',
+    desc: 'Creaz&#259; cont cu email &#537;i parol&#259;. Completeaz&#259; verificarea KYC (buletin + dovad&#259; adres&#259;) pentru retrageri rapide.',
     Icon: UserPlus,
   },
   {
     step: 3,
     title: 'Depune Fonduri',
-    desc: 'Alege metoda (card, e-wallet, crypto). Depunere minima 10€. Profita de bonusul de bun venit daca aplica.',
+    desc: 'Alege metoda (card, e-wallet, crypto). Depunere minim&#259; 10€. Profit&#259; de bonusul de bun venit dac&#259; aplic&#259;.',
     Icon: CreditCard,
   },
   {
     step: 4,
     title: 'Alege Lozul',
-    desc: 'Cauta sectiunea Scratch Cards sau Instant Games. Testeaza in modul demo gratuit inainte de a paria bani reali.',
+    desc: 'Caut&#259; sec&#539;iunea Scratch Cards sau Instant Games. Testeaz&#259; &#238;n modul demo gratuit &#238;nainte de a paria bani reali.',
     Icon: Dices,
   },
   {
     step: 5,
-    title: 'Razuieste si Castiga',
-    desc: 'Stabileste miza (0.10€ - 100€), razuieste manual sau foloseste "Scratch All". Castigurile se crediteaza instant in sold.',
+    title: 'R&#259;zuie&#537;te &#537;i C&#226;&#537;tig&#259;',
+    desc: 'Stabile&#537;te miza (0.10€ - 100€), r&#259;zuie&#537;te manual sau folose&#537;te "Scratch All". C&#226;&#537;tigurile se crediteaz&#259; instant &#238;n sold.',
     Icon: Sparkles,
   },
 ];
@@ -43,8 +43,8 @@ export function HowToPlaySection() {
             Cum Joci Lozuri Razuibile Online
           </h2>
           <p className="mx-auto max-w-3xl text-base leading-relaxed text-gray-700">
-            Ghid pas cu pas pentru incepatori — de la alegerea jocului pana la retragerea
-            castigurilor
+            Ghid pas cu pas pentru &#238;ncep&#259;tori — de la alegerea jocului p&#226;n&#259; la retragerea
+            c&#226;&#537;tigurilor
           </p>
         </div>
 
