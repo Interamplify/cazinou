@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { SITE_URL } from '@/lib/constants';
 import { JsonLd } from '@/components/shared/json-ld';
-import { CalendarDays, Gift, RotateCcw, ArrowRight, Shield, TrendingUp, Award } from 'lucide-react';
+import { CalendarDays, Gift, RotateCcw, ArrowRight, Shield, TrendingUp, Award, Sparkles } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Cele Mai Bune Bonusuri la Cazinouri Internaționale 2026',
@@ -43,6 +43,18 @@ const bonusPages = [
     iconColor: 'text-orange-600',
     badge: 'Free Spins',
     badgeColor: 'bg-orange-100 text-orange-700',
+  },
+  {
+    title: 'Bonus Billionairespin Casino',
+    href: '/bonus/billionairespin-casino/',
+    desc: 'Pachet complet 255% până la 2.250 RON + 250 rotiri gratuite pe 3 depuneri. Cashback 25%, VIP cu 4 niveluri.',
+    stats: ['255% Bonus', '250 Rotiri Gratuite', 'Cashback 25%'],
+    Icon: Sparkles,
+    color: 'border-purple-200 bg-purple-50/30 hover:border-purple-300',
+    iconBg: 'bg-purple-100',
+    iconColor: 'text-purple-600',
+    badge: 'Casino Specific',
+    badgeColor: 'bg-purple-100 text-purple-700',
   },
 ];
 
@@ -159,7 +171,7 @@ export default function BonusPage() {
             </p>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-2 max-w-4xl mx-auto">
+          <div className="grid gap-6 lg:grid-cols-2 max-w-5xl mx-auto">
             {bonusPages.map((page) => (
               <Link
                 key={page.href}
