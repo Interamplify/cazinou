@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { mainNavItems } from '@/data/navigation';
@@ -14,8 +15,22 @@ import {
 } from '@/components/ui/navigation-menu';
 
 export function Header() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="fixed z-40 h-16 top-0 left-0 right-0 w-full bg-white/90 flex items-center backdrop-blur-md border-b border-gray-100 shadow-sm">
+    <header className={`fixed z-40 h-16 top-0 left-0 right-0 w-full flex items-center backdrop-blur-md border-b transition-all duration-300 ${
+      scrolled
+        ? 'bg-white/95 border-gray-200 shadow-md shadow-gray-200/50'
+        : 'bg-white/80 border-gray-100 shadow-sm'
+    }`}>
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-6">
           <Link href="/" className="flex items-center gap-2 flex-shrink-0">

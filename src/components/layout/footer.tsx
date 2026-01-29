@@ -5,7 +5,7 @@ import { footerNavItems } from '@/data/navigation';
 
 export function Footer() {
   return (
-    <footer className="border-t border-gray-200 bg-white">
+    <footer className="border-t border-gray-200 bg-gradient-to-b from-white to-gray-50/80">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-10 py-12 md:grid-cols-3">
           {/* Brand */}

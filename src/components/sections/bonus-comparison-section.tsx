@@ -91,12 +91,12 @@ export function BonusComparisonSection() {
   return (
     <section id="bonusuri" className="py-14 lg:py-20 bg-gray-50/60">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-10 text-center">
-          <div className="w-10 h-1 bg-orange-500 rounded-full mb-4 mx-auto" />
-          <h2 className="text-2xl sm:text-3xl font-bold font-mono text-gray-900">
+        <div className="mb-12 text-center">
+          <div className="w-12 h-1 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full mb-4 mx-auto" />
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
             Tipuri de Bonusuri la Cazinouri Online
           </h2>
-          <p className="text-base text-gray-500 mt-2 max-w-2xl mx-auto">
+          <p className="text-base text-gray-500 mt-3 max-w-2xl mx-auto">
             Înțelege fiecare tip de bonus, cum funcționează și cum să profiți la maxim de ofertele disponibile.
           </p>
         </div>
@@ -126,10 +126,10 @@ function BonusCard({
   const colors = accentColors[bonus.slug] ?? defaultColors;
 
   return (
-    <div className={`rounded-2xl border ${colors.border} bg-white p-5 hover:shadow-md transition-all group`}>
+    <div className={`rounded-2xl border ${colors.border} bg-white p-5 hover:shadow-lg hover:shadow-gray-200/50 hover:-translate-y-0.5 transition-all duration-300 group`}>
       {/* Header */}
       <div className="flex items-start gap-3 mb-4">
-        <div className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl ${colors.bg} border ${colors.border} group-hover:shadow-sm transition-shadow`}>
+        <div className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl ${colors.bg} border ${colors.border} group-hover:scale-105 transition-transform duration-300`}>
           <Icon className={`h-5 w-5 ${colors.icon}`} />
         </div>
         <div className="min-w-0">

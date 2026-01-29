@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { Star, ExternalLink } from 'lucide-react';
 import { RATING_MAX } from '@/lib/constants';
 import type { Casino } from '@/types/casino';
+import { ColorfulMobileList } from '@/components/casino/colorful-mobile-card';
 
 interface TopListProps {
   casinos: Casino[];
@@ -11,54 +12,8 @@ interface TopListProps {
 export function TopList({ casinos, trackingSource }: TopListProps) {
   return (
     <>
-      {/* Mobile cards (< lg) */}
-      <div className="lg:hidden space-y-3">
-        {casinos.map((casino, i) => {
-          const rank = i + 1;
-          return (
-            <div
-              key={casino.slug}
-              className={`rounded-2xl border p-4 ${
-                rank <= 3
-                  ? 'border-orange-200 bg-gradient-to-r from-orange-50/60 to-white shadow-sm'
-                  : 'border-gray-200 bg-white'
-              }`}
-            >
-              <div className="flex items-center gap-3 mb-3">
-                <span className={`flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold text-white ${rank === 1 ? 'bg-orange-500' : rank <= 3 ? 'bg-orange-400' : 'bg-gray-400'}`}>
-                  {rank}
-                </span>
-                <div className="relative h-11 w-11 overflow-hidden rounded-lg border border-gray-100 bg-white flex-shrink-0">
-                  <Image src={casino.logo} alt={casino.name} fill className="object-contain p-1" sizes="44px" />
-                </div>
-                <div className="min-w-0 flex-1">
-                  <p className="text-sm font-bold font-mono text-gray-900 truncate">{casino.name}</p>
-                  <div className="flex items-center gap-1">
-                    <Star className="h-3 w-3 text-amber-500 fill-amber-500" />
-                    <span className="text-xs font-bold font-mono">{casino.overallRating.toFixed(1)}/{RATING_MAX}</span>
-                  </div>
-                </div>
-              </div>
-              <p className="text-xs font-semibold text-orange-600 font-mono mb-2">{casino.bonusTitle}</p>
-              <div className="flex items-center justify-between gap-2">
-                <div className="flex items-center gap-3 text-xs text-gray-500">
-                  <span>Rulaj x{casino.wageringRequirement}</span>
-                  <span>{casino.license === 'N/A' ? 'Lic. N/A' : casino.license}</span>
-                </div>
-                <a
-                  href={casino.affiliateUrl}
-                  target="_blank"
-                  rel="noopener noreferrer sponsored"
-                  data-tracking={trackingSource}
-                  className="inline-flex items-center gap-1.5 rounded-xl bg-orange-500 px-4 py-2 text-xs font-bold text-white hover:bg-orange-600 transition-colors"
-                >
-                  Viziteaza <ExternalLink className="h-3 w-3" />
-                </a>
-              </div>
-            </div>
-          );
-        })}
-      </div>
+      {/* Mobile cards - COLORFUL */}
+      <ColorfulMobileList casinos={casinos} />
 
       {/* Desktop HTML table (>= lg) — semantic for SEO */}
       <div className="hidden lg:block overflow-x-auto rounded-2xl border border-gray-200 shadow-sm">

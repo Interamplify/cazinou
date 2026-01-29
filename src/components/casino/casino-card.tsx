@@ -14,10 +14,10 @@ export function CasinoCard({ casino, rank }: CasinoCardProps) {
   return (
     <article
       className={cn(
-        'group rounded-2xl border transition-all hover:shadow-lg',
+        'group rounded-2xl border transition-all duration-300 hover:shadow-xl hover:shadow-gray-200/60 hover:-translate-y-0.5',
         isTop
-          ? 'border-orange-200 bg-gradient-to-br from-orange-50/50 via-white to-white shadow-sm'
-          : 'border-gray-200 bg-white hover:border-orange-100'
+          ? 'border-orange-200 bg-gradient-to-br from-orange-50/50 via-white to-white shadow-md shadow-orange-100/50'
+          : 'border-gray-200 bg-white hover:border-orange-200'
       )}
     >
       {/* Mobile layout */}
@@ -84,9 +84,10 @@ export function CasinoCard({ casino, rank }: CasinoCardProps) {
             href={casino.affiliateUrl}
             target="_blank"
             rel="noopener noreferrer sponsored"
-            className="inline-flex items-center justify-center rounded-xl bg-orange-500 px-6 py-2.5 text-sm font-bold font-mono text-white hover:bg-orange-600 transition-colors shadow-sm"
+            className="group/btn relative inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-2.5 text-sm font-bold text-white shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/30 transition-all duration-300 overflow-hidden"
           >
-            Joaca Acum
+            <span className="relative z-10">Joaca Acum</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-700 opacity-0 group-hover/btn:opacity-100 transition-opacity" />
           </a>
         </div>
       </div>
@@ -161,9 +162,10 @@ export function CasinoCard({ casino, rank }: CasinoCardProps) {
             href={casino.affiliateUrl}
             target="_blank"
             rel="noopener noreferrer sponsored"
-            className="inline-flex items-center justify-center rounded-xl bg-orange-500 px-7 py-3 text-sm font-bold font-mono text-white hover:bg-orange-600 transition-colors shadow-sm hover:shadow-md w-full"
+            className="group/btn relative inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 px-7 py-3 text-sm font-bold text-white shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/30 transition-all duration-300 w-full overflow-hidden"
           >
-            Joaca Acum
+            <span className="relative z-10">Joaca Acum</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-700 opacity-0 group-hover/btn:opacity-100 transition-opacity" />
           </a>
           <span className="text-xs font-mono px-3 py-1 rounded-full border border-gray-200 text-gray-500 uppercase tracking-wide">
             {casino.license}
