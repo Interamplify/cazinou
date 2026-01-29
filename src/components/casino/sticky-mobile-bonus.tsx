@@ -10,7 +10,7 @@ interface StickyMobileBonusProps {
   label?: string;
 }
 
-export function StickyMobileBonus({ casino, label = 'Bonus de la Semana' }: StickyMobileBonusProps) {
+export function StickyMobileBonus({ casino, label = 'Bonusul Săptămânii' }: StickyMobileBonusProps) {
   const [isVisible, setIsVisible] = React.useState(true);
   const [hasScrolled, setHasScrolled] = React.useState(false);
 
@@ -37,7 +37,7 @@ export function StickyMobileBonus({ casino, label = 'Bonus de la Semana' }: Stic
           <button
             onClick={() => setIsVisible(false)}
             className="flex-shrink-0 p-1 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
-            aria-label="Cerrar"
+            aria-label="Închide"
           >
             <X className="w-4 h-4 text-white/70" />
           </button>
@@ -96,7 +96,7 @@ interface StickyMobileBonusAnonymousProps {
   label?: string;
 }
 
-export function StickyMobileBonusAnonymous({ casino, label = 'Bonus de la Semana' }: StickyMobileBonusAnonymousProps) {
+export function StickyMobileBonusAnonymous({ casino, label = 'Bonusul Săptămânii' }: StickyMobileBonusAnonymousProps) {
   const [isVisible, setIsVisible] = React.useState(true);
   const [hasScrolled, setHasScrolled] = React.useState(false);
 
@@ -120,7 +120,7 @@ export function StickyMobileBonusAnonymous({ casino, label = 'Bonus de la Semana
           <button
             onClick={() => setIsVisible(false)}
             className="flex-shrink-0 p-1 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
-            aria-label="Cerrar"
+            aria-label="Închide"
           >
             <X className="w-4 h-4 text-white/70" />
           </button>

@@ -34,7 +34,7 @@ export default function HomePage() {
       <CasinoListingSection />
 
       {/* Sticky Mobile Bonus */}
-      <StickyMobileBonus casino={topCasino} label="Bonus de la Semana" />
+      <StickyMobileBonus casino={topCasino} label="Bonusul Săptămânii" />
       <TopReviewsSection />
       <CategoryPicksSection />
       <MethodologySection />
