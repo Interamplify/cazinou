@@ -8,10 +8,10 @@ import { gratowinBonusFaqs } from '@/data/gratowin-bonus';
 
 export function FaqSection() {
   return (
-    <section id="faq" className="py-14 lg:py-20 bg-gray-50/60">
+    <section id="faq" className="py-14 lg:py-20">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-8 text-center">
-          <div className="w-10 h-1 bg-purple-600 rounded-full mb-4 mx-auto" />
+          <div className="w-10 h-1 bg-orange-500 rounded-full mb-4 mx-auto" />
           <h2 className="text-2xl sm:text-3xl font-bold font-mono text-gray-900">
             Întrebări Frecvente despre Bonusul GratoWin Casino
           </h2>
@@ -27,9 +27,9 @@ export function FaqSection() {
               <AccordionItem
                 key={i}
                 value={`faq-${i}`}
-                className="rounded-2xl border border-gray-200 bg-white px-6 data-[state=open]:border-purple-200 data-[state=open]:shadow-sm transition-all"
+                className="rounded-2xl border border-gray-200 bg-white px-6 data-[state=open]:border-orange-200 data-[state=open]:shadow-sm transition-all"
               >
-                <AccordionTrigger className="text-left text-base font-semibold font-mono text-gray-900 hover:text-purple-600 py-5 [&[data-state=open]]:text-purple-600">
+                <AccordionTrigger className="text-left text-base font-semibold font-mono text-gray-900 hover:text-orange-600 py-5 [&[data-state=open]]:text-orange-600">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-base text-gray-600 leading-relaxed pb-5">

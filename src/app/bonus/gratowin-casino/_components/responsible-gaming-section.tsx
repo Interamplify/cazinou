@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export function ResponsibleGamingSection() {
   return (
-    <section className="py-14 lg:py-20">
+    <section className="py-14 lg:py-20 bg-gray-50/60">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
           <div className="rounded-2xl border-2 border-gray-200 bg-white p-6 lg:p-8 shadow-sm">
@@ -23,6 +23,13 @@ export function ResponsibleGamingSection() {
                 height={495}
                 className="rounded-xl w-full h-auto"
               />
+            </div>
+
+            <div className="rounded-xl border border-amber-200 bg-amber-50/50 p-4 mb-6">
+              <p className="text-sm text-gray-700">
+                <strong className="text-amber-700">Notă:</strong> Suportul GratoWin este disponibil
+                doar în limba engleză. Live chat-ul nu funcționează 24/7.
+              </p>
             </div>
 
             <p className="text-sm text-gray-600 leading-relaxed mb-6">
@@ -53,13 +60,6 @@ export function ResponsibleGamingSection() {
                   <p className="text-sm font-medium text-gray-900">+35722030935</p>
                 </div>
               </div>
-            </div>
-
-            <div className="rounded-xl border border-amber-200 bg-amber-50/50 p-4 mb-6">
-              <p className="text-sm text-gray-700">
-                <strong className="text-amber-700">Notă:</strong> Suportul GratoWin este disponibil
-                doar în limba engleză. Live chat-ul nu funcționează 24/7.
-              </p>
             </div>
 
             <div className="pt-6 border-t border-gray-200">

@@ -1,27 +1,39 @@
-import { Gift, CheckCircle2, Tag, ExternalLink } from 'lucide-react';
+import { Gift, Zap, Star } from 'lucide-react';
 import Image from 'next/image';
 
-const depositBonuses = [
+const deposits = [
   {
-    deposit: 'Prima Depunere',
-    bonus: '100%',
-    maxAmount: '5.000 RON',
+    number: 1,
+    title: 'Prima Depunere',
+    bonus: '100% până la 5.000 RON',
     code: 'GRATO100',
-    color: 'purple',
+    minDeposit: '50 RON minim',
+    icon: Gift,
+    iconColor: 'text-orange-500',
+    bgColor: 'bg-orange-50',
+    borderColor: 'border-orange-200',
   },
   {
-    deposit: 'A Doua Depunere',
-    bonus: '50%',
-    maxAmount: '5.000 RON',
+    number: 2,
+    title: 'A Doua Depunere',
+    bonus: '50% până la 5.000 RON',
     code: 'GRATO50',
-    color: 'blue',
+    minDeposit: '50 RON minim',
+    icon: Zap,
+    iconColor: 'text-blue-500',
+    bgColor: 'bg-blue-50',
+    borderColor: 'border-blue-200',
   },
   {
-    deposit: 'A Treia Depunere',
-    bonus: '150%',
-    maxAmount: '5.000 RON',
+    number: 3,
+    title: 'A Treia Depunere',
+    bonus: '150% până la 5.000 RON',
     code: 'GRATO150',
-    color: 'green',
+    minDeposit: '50 RON minim',
+    icon: Star,
+    iconColor: 'text-green-500',
+    bgColor: 'bg-green-50',
+    borderColor: 'border-green-200',
   },
 ];
 
@@ -30,129 +42,94 @@ export function WelcomeBonusSection() {
     <section id="bonus-bun-venit" className="py-14 lg:py-20">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 text-center">
-          <div className="w-10 h-1 bg-purple-600 rounded-full mb-4 mx-auto" />
+          <div className="w-10 h-1 bg-orange-500 rounded-full mb-4 mx-auto" />
           <h2 className="text-2xl sm:text-3xl font-bold font-mono text-gray-900">
             Bonus de Bun Venit GratoWin Casino
           </h2>
-          <p className="text-base text-gray-600 mt-3 max-w-2xl mx-auto">
-            Pachet de bun venit de până la 15.000 RON (3.000 EUR) distribuit pe primele 3 depuneri.
+          <p className="text-base text-gray-500 mt-2 max-w-2xl mx-auto">
+            Pachetul complet se desfășoară pe primele trei depuneri,
+            oferindu-ți până la 15.000 RON (3.000 EUR) bonus.
           </p>
         </div>
 
-        {/* Bonus image */}
+        {/* Review image */}
         <div className="mb-10 max-w-3xl mx-auto">
           <Image
-            src="/images/gratowin-bonus.webp"
-            alt="GratoWin Casino Bonus de Bun Venit"
-            width={800}
-            height={500}
+            src="/images/gratowin-recenzie.webp"
+            alt="GratoWin Casino Recenzie"
+            width={1024}
+            height={552}
             className="rounded-xl shadow-lg w-full h-auto"
           />
         </div>
 
-        {/* Deposit bonus cards */}
-        <div className="grid gap-6 lg:grid-cols-3 mb-10">
-          {depositBonuses.map((bonus) => (
-            <article
-              key={bonus.deposit}
-              className={`rounded-2xl border-2 p-6 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 ${
-                bonus.color === 'purple'
-                  ? 'border-purple-200 bg-gradient-to-br from-purple-50 to-white'
-                  : bonus.color === 'blue'
-                    ? 'border-blue-200 bg-gradient-to-br from-blue-50 to-white'
-                    : 'border-green-200 bg-gradient-to-br from-green-50 to-white'
-              }`}
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <div
-                  className={`flex h-10 w-10 items-center justify-center rounded-full ${
-                    bonus.color === 'purple'
-                      ? 'bg-purple-100'
-                      : bonus.color === 'blue'
-                        ? 'bg-blue-100'
-                        : 'bg-green-100'
-                  }`}
-                >
-                  <Gift
-                    className={`h-5 w-5 ${
-                      bonus.color === 'purple'
-                        ? 'text-purple-600'
-                        : bonus.color === 'blue'
-                          ? 'text-blue-600'
-                          : 'text-green-600'
-                    }`}
-                  />
+        {/* Deposit cards grid */}
+        <div className="grid gap-6 sm:grid-cols-3 max-w-4xl mx-auto mb-8">
+          {deposits.map((deposit) => {
+            const IconComponent = deposit.icon;
+            return (
+              <div
+                key={deposit.number}
+                className={`group relative overflow-hidden rounded-2xl border-2 ${deposit.borderColor} bg-white shadow-sm transition-all hover:shadow-lg hover:-translate-y-1`}
+              >
+                <div className={`h-2 bg-gradient-to-r ${deposit.bgColor}`} />
+                <div className="p-6 space-y-4">
+                  {/* Badge */}
+                  <div className="flex items-center justify-between">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-500 text-white font-bold font-mono text-lg">
+                      {deposit.number}
+                    </div>
+                    <div className={`flex h-12 w-12 items-center justify-center rounded-full ${deposit.bgColor}`}>
+                      <IconComponent className={`h-6 w-6 ${deposit.iconColor}`} aria-hidden="true" />
+                    </div>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-xl font-bold font-mono text-gray-900">
+                    {deposit.title}
+                  </h3>
+
+                  {/* Details */}
+                  <div className="space-y-3 pt-2 border-t border-gray-100">
+                    <div>
+                      <p className="text-xs font-mono text-gray-500 uppercase mb-1">Bonus</p>
+                      <p className="text-lg font-bold font-mono text-orange-600">{deposit.bonus}</p>
+                    </div>
+
+                    <div>
+                      <p className="text-xs font-mono text-gray-500 uppercase mb-1">Cod Promoțional</p>
+                      <p className="text-sm font-semibold font-mono text-gray-900">{deposit.code}</p>
+                    </div>
+
+                    <div>
+                      <p className="text-xs font-mono text-gray-500 uppercase mb-1">Depunere Minimă</p>
+                      <p className="text-sm font-medium font-mono text-gray-700">{deposit.minDeposit}</p>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="font-mono font-bold text-gray-900">{bonus.deposit}</h3>
               </div>
-
-              <div className="text-center py-4 mb-4 rounded-xl bg-white/60 border border-gray-200">
-                <p
-                  className={`text-4xl font-extrabold font-mono ${
-                    bonus.color === 'purple'
-                      ? 'text-purple-600'
-                      : bonus.color === 'blue'
-                        ? 'text-blue-600'
-                        : 'text-green-600'
-                  }`}
-                >
-                  {bonus.bonus}
-                </p>
-                <p className="text-sm text-gray-600 mt-1">până la {bonus.maxAmount}</p>
-              </div>
-
-              <div className="flex items-center justify-center gap-2 p-3 rounded-lg bg-gray-100">
-                <Tag className="h-4 w-4 text-gray-500" />
-                <span className="text-sm font-mono font-semibold text-gray-700">
-                  Cod: {bonus.code}
-                </span>
-              </div>
-            </article>
-          ))}
+            );
+          })}
         </div>
 
-        {/* Key conditions */}
-        <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm mb-6">
-          <h3 className="font-mono font-bold text-gray-900 text-lg mb-4">Condiții Importante</h3>
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="flex items-start gap-2">
-              <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-              <span className="text-sm text-gray-700">
-                <strong>Depunere minimă:</strong> 50 RON
-              </span>
-            </div>
-            <div className="flex items-start gap-2">
-              <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-              <span className="text-sm text-gray-700">
-                <strong>Rulaj:</strong> 35x suma bonus
-              </span>
-            </div>
-            <div className="flex items-start gap-2">
-              <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-              <span className="text-sm text-gray-700">
-                <strong>Valabilitate:</strong> 30 zile
-              </span>
-            </div>
-            <div className="flex items-start gap-2">
-              <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-              <span className="text-sm text-gray-700">
-                <strong>Total:</strong> până la 15.000 RON
-              </span>
-            </div>
-          </div>
+        {/* Total summary box */}
+        <div className="rounded-2xl border-2 border-orange-500 bg-orange-50/50 p-6 text-center max-w-3xl mx-auto mb-6">
+          <p className="text-xs font-mono text-gray-500 uppercase mb-2">Total Pachet Bun Venit</p>
+          <p className="text-2xl sm:text-3xl font-bold font-mono text-gray-900">
+            Până la 15.000 RON <span className="text-orange-500">+</span> 50 Rotiri Fără Depunere
+          </p>
+          <p className="text-sm text-gray-600 mt-2 font-mono">
+            Distribuit pe primele 3 depuneri • Rulaj 35x • Valabil 30 zile
+          </p>
         </div>
 
-        {/* CTA */}
-        <div className="text-center">
-          <a
-            href="/go/gratowin-casino"
-            target="_blank"
-            rel="nofollow noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-purple-600 px-8 py-3.5 text-base font-semibold text-white shadow-lg hover:bg-purple-700 transition-colors"
-          >
-            Activează Bonusul de Bun Venit
-            <ExternalLink className="h-4 w-4" />
-          </a>
+        {/* Warning note */}
+        <div className="rounded-xl border border-amber-200 bg-amber-50/50 p-5 text-center max-w-3xl mx-auto">
+          <p className="text-sm text-gray-700 leading-relaxed">
+            <strong className="text-amber-700">Atenție Live Casino!</strong> Pentru jocurile de Live Casino,
+            cerințele de rulaj pot ajunge la <strong>250x sau 500x</strong>, condiții foarte ridicate.
+            Recomandăm să eviți bonusurile pentru Live Casino.
+          </p>
         </div>
       </div>
     </section>

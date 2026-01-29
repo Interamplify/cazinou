@@ -1,27 +1,36 @@
-import { Crown, Gift, Trophy, Star } from 'lucide-react';
+import { Star, Crown, Award, Gift, Zap, Trophy } from 'lucide-react';
 import Image from 'next/image';
 
 const vipLevels = [
-  { level: 'Entry', points: '0', withdrawalLimit: '2.500 RON/lună' },
-  { level: 'Bronze', points: '1.000', withdrawalLimit: '5.000 RON/lună' },
-  { level: 'Silver', points: '5.000', withdrawalLimit: '10.000 RON/lună' },
-  { level: 'Gold', points: '25.000', withdrawalLimit: '25.000 RON/lună' },
-  { level: 'Platinum', points: '100.000', withdrawalLimit: '50.000 RON/lună' },
-  { level: 'Diamond', points: '500.000', withdrawalLimit: 'Nelimitat' },
+  { level: 1, name: 'Entry', points: '0', limit: '2.500 RON' },
+  { level: 2, name: 'Bronze', points: '1.000', limit: '5.000 RON' },
+  { level: 3, name: 'Silver', points: '5.000', limit: '10.000 RON' },
+  { level: 4, name: 'Gold', points: '25.000', limit: '25.000 RON' },
+  { level: 5, name: 'Platinum', points: '100.000', limit: '50.000 RON' },
+  { level: 6, name: 'Diamond', points: '500.000', limit: 'Nelimitat' },
+];
+
+const vipBenefits = [
+  { icon: Gift, text: 'Limite de retragere crescute cu fiecare nivel' },
+  { icon: Trophy, text: 'Acces la turnee exclusive VIP' },
+  { icon: Zap, text: 'Bonusuri și promoții personalizate' },
+  { icon: Crown, text: 'Magazin VIP pentru conversie puncte' },
+  { icon: Star, text: 'Puncte la fiecare 50 RON pariați' },
+  { icon: Award, text: 'Avansare automată în niveluri' },
 ];
 
 export function VIPProgramSection() {
   return (
-    <section id="program-vip" className="py-14 lg:py-20 bg-gray-50/60">
+    <section id="program-vip" className="py-14 lg:py-20">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 text-center">
           <div className="w-10 h-1 bg-gradient-to-r from-purple-500 to-amber-500 rounded-full mb-4 mx-auto" />
           <h2 className="text-2xl sm:text-3xl font-bold font-mono text-gray-900">
-            Program VIP GratoWin — 6 Niveluri
+            Program VIP GratoWin — 6 Niveluri cu Beneficii Exclusive
           </h2>
-          <p className="text-base text-gray-600 mt-3 max-w-2xl mx-auto">
+          <p className="text-base text-gray-600 mt-3 max-w-3xl mx-auto leading-relaxed">
             La fiecare 50 RON pariați, primești 1 punct. Punctele pot fi folosite în magazinul VIP
-            pentru bonusuri în bani.
+            pentru bonusuri în bani. Limitele de retragere cresc cu fiecare nivel.
           </p>
         </div>
 
@@ -38,39 +47,17 @@ export function VIPProgramSection() {
 
         {/* VIP Levels Grid */}
         <div className="grid gap-3 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 mb-10">
-          {vipLevels.map((level, index) => (
+          {vipLevels.map((level) => (
             <div
               key={level.level}
-              className={`rounded-xl border p-4 text-center transition-all hover:shadow-md ${
-                index === 5
-                  ? 'border-amber-300 bg-gradient-to-br from-amber-50 to-white'
-                  : index >= 3
-                    ? 'border-purple-200 bg-gradient-to-br from-purple-50/50 to-white'
-                    : 'border-gray-200 bg-white'
-              }`}
+              className="rounded-xl border border-gray-200 bg-white p-4 text-center hover:shadow-md hover:border-orange-300 transition-all"
             >
-              <div
-                className={`flex h-10 w-10 items-center justify-center rounded-full mx-auto mb-2 ${
-                  index === 5
-                    ? 'bg-amber-100'
-                    : index >= 3
-                      ? 'bg-purple-100'
-                      : 'bg-gray-100'
-                }`}
-              >
-                <Crown
-                  className={`h-5 w-5 ${
-                    index === 5
-                      ? 'text-amber-600'
-                      : index >= 3
-                        ? 'text-purple-600'
-                        : 'text-gray-600'
-                  }`}
-                />
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-100 mx-auto mb-2">
+                <span className="text-sm font-bold text-orange-600">{level.level}</span>
               </div>
-              <p className="font-mono font-bold text-gray-900 text-sm mb-1">{level.level}</p>
+              <p className="font-mono font-bold text-gray-900 text-sm mb-1">{level.name}</p>
               <p className="text-xs text-gray-500 mb-2">{level.points} puncte</p>
-              <p className="text-xs font-semibold text-purple-600">{level.withdrawalLimit}</p>
+              <p className="text-sm font-extrabold text-green-600 font-mono">{level.limit}/lună</p>
             </div>
           ))}
         </div>
@@ -100,12 +87,32 @@ export function VIPProgramSection() {
           </p>
         </div>
 
+        {/* VIP Benefits */}
+        <div className="rounded-2xl border border-purple-200 bg-purple-50/30 p-6 lg:p-8 shadow-sm mb-6">
+          <div className="flex items-start gap-3 mb-5">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 flex-shrink-0">
+              <Crown className="h-5 w-5 text-purple-600" />
+            </div>
+            <h3 className="font-mono font-bold text-purple-900 text-lg">
+              Beneficii Program VIP GratoWin
+            </h3>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {vipBenefits.map((benefit, idx) => (
+              <div key={idx} className="flex items-start gap-2">
+                <benefit.icon className="h-5 w-5 text-purple-600 flex-shrink-0 mt-0.5" />
+                <span className="text-sm text-gray-700">{benefit.text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Note */}
-        <div className="rounded-xl border border-purple-200 bg-purple-50/50 p-5 text-center">
+        <div className="rounded-xl border border-amber-200 bg-amber-50/50 p-5 text-center">
           <p className="text-sm text-gray-700 leading-relaxed">
-            <strong className="text-purple-700">Cum avansezi?</strong> Pe măsură ce acumulezi puncte
-            prin pariuri, avansezi automat în nivelurile VIP și beneficiezi de limite de retragere
-            mai mari și promoții exclusive.
+            <strong className="text-amber-700">Cum avansezi?</strong> Nivelul tău VIP crește automat
+            în funcție de punctele acumulate prin pariuri. Cu cât joci mai mult, cu atât mai rapid avansezi
+            și beneficiezi de limite de retragere mai mari.
           </p>
         </div>
       </div>
