@@ -69,6 +69,7 @@ export const cazinouriNoiFaqs = [
 
 export const tocItems = [
   { id: 'top-cazinouri', label: 'Top 20' },
+  { id: 'recenzii', label: 'Recenzii' },
   { id: 'recomandari', label: 'Recomandări' },
   { id: 'fara-depunere', label: 'Fără Depunere' },
   { id: 'inovatii', label: 'Inovații' },

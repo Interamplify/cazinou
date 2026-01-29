@@ -16,6 +16,7 @@ import { LegalAspectsSection } from './_components/legal-aspects-section';
 import { ExpertQuoteSection } from './_components/expert-quote-section';
 import { EvaluationStepsSection } from './_components/evaluation-steps-section';
 import { MethodologySection } from './_components/methodology-section';
+import { ReviewsSection } from './_components/reviews-section';
 import { FaqSection } from './_components/faq-section';
 import { ResponsibleGamingSection } from './_components/responsible-gaming-section';
 
@@ -75,6 +76,7 @@ export default function CazinouriNoiPage() {
       <HeroSection />
       <StickyToc items={tocItems} />
       <CasinoListingSection />
+      <ReviewsSection />
       <RecommendationsSection />
       <NoDepositSection />
       <InnovationsSection />

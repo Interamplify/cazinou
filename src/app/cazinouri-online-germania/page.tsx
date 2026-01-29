@@ -19,6 +19,7 @@ import { PopularSlotsSection } from './_components/popular-slots-section';
 import { RomanianGamesSection } from './_components/romanian-games-section';
 import { PaymentMethodsSection } from './_components/payment-methods-section';
 import { HowToChooseSection } from './_components/how-to-choose-section';
+import { ReviewsSection } from './_components/reviews-section';
 import { FaqSection } from './_components/faq-section';
 import { ResponsibleGamingSection } from './_components/responsible-gaming-section';
 
@@ -78,6 +79,7 @@ export default function CazinouriGermaniaPage() {
       <HeroSection />
       <StickyToc items={tocItems} />
       <CasinoListingSection />
+      <ReviewsSection />
       <ComparisonTableSection />
       <LegalSection />
       <VpnGuideSection />

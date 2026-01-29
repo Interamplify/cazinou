@@ -123,6 +123,7 @@ export const cazinouriGermaniaFaqs = [
 
 export const tocItems = [
   { id: 'top-cazinouri', label: 'Top Cazinouri' },
+  { id: 'recenzii', label: 'Recenzii' },
   { id: 'comparatie', label: 'GGL vs Offshore' },
   { id: 'legalitate', label: 'Legalitate' },
   { id: 'ghid-vpn', label: 'Ghid VPN' },

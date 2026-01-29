@@ -98,7 +98,7 @@ export function StickyToc({ items }: { items: TocItem[] }) {
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <ul
           ref={scrollContainerRef}
-          className="flex justify-start gap-1 overflow-x-auto py-2.5 scrollbar-hide -mx-1 px-1"
+          className="flex justify-start md:justify-center gap-1 overflow-x-auto py-2.5 scrollbar-hide -mx-1 px-1"
         >
           {items.map((item) => (
             <li key={item.id} className="flex-shrink-0">
