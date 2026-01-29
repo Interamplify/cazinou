@@ -35,7 +35,7 @@ export function HeroTop3({ casinos }: HeroTop3Props) {
         </div>
 
         {/* Horizontal cards with podium heights */}
-        <div className="relative flex items-end justify-center gap-1.5 px-2">
+        <div className="relative flex items-end justify-center gap-1.5">
           {podiumOrder.map((casino, idx) => {
             const isFirst = idx === 1;
             const isSecond = idx === 0;
@@ -59,8 +59,8 @@ export function HeroTop3({ casinos }: HeroTop3Props) {
                 href={casino.affiliateUrl}
                 target="_blank"
                 rel="noopener noreferrer sponsored"
-                className={`group relative flex-1 transition-all duration-300 active:scale-95 ${
-                  isFirst ? 'max-w-[160px] z-10' : 'max-w-[120px]'
+                className={`group relative transition-all duration-300 active:scale-95 ${
+                  isFirst ? 'flex-[1.3] z-10' : 'flex-1'
                 }`}
               >
                 {/* Main card */}
