@@ -4,15 +4,23 @@ import { anonymousCasinos } from '@/data/cazinouri-anonime';
 
 // Colores vibrantes para las cards
 const colorSchemes = [
-  { gradient: 'from-orange-500 via-red-500 to-pink-500', shadow: 'shadow-orange-500/30', cta: 'from-orange-600 to-red-600', badge: 'TOP #1' },
-  { gradient: 'from-violet-600 via-purple-500 to-fuchsia-500', shadow: 'shadow-violet-500/30', cta: 'from-violet-600 to-purple-600', badge: 'HOT' },
-  { gradient: 'from-cyan-500 via-blue-500 to-indigo-500', shadow: 'shadow-cyan-500/30', cta: 'from-cyan-600 to-blue-600', badge: 'TOP 3' },
-  { gradient: 'from-emerald-500 via-green-500 to-teal-500', shadow: 'shadow-emerald-500/30', cta: 'from-emerald-600 to-green-600', badge: null },
-  { gradient: 'from-amber-500 via-yellow-500 to-orange-400', shadow: 'shadow-amber-500/30', cta: 'from-amber-600 to-yellow-600', badge: null },
-  { gradient: 'from-rose-500 via-pink-500 to-red-400', shadow: 'shadow-rose-500/30', cta: 'from-rose-600 to-pink-600', badge: null },
-  { gradient: 'from-blue-600 via-indigo-500 to-violet-500', shadow: 'shadow-blue-500/30', cta: 'from-blue-600 to-indigo-600', badge: null },
-  { gradient: 'from-teal-500 via-cyan-500 to-sky-500', shadow: 'shadow-teal-500/30', cta: 'from-teal-600 to-cyan-600', badge: null },
+  { gradient: 'from-orange-500 via-red-500 to-pink-500', shadow: 'shadow-orange-500/30', cta: 'from-orange-600 to-red-600' },
+  { gradient: 'from-violet-600 via-purple-500 to-fuchsia-500', shadow: 'shadow-violet-500/30', cta: 'from-violet-600 to-purple-600' },
+  { gradient: 'from-cyan-500 via-blue-500 to-indigo-500', shadow: 'shadow-cyan-500/30', cta: 'from-cyan-600 to-blue-600' },
+  { gradient: 'from-emerald-500 via-green-500 to-teal-500', shadow: 'shadow-emerald-500/30', cta: 'from-emerald-600 to-green-600' },
+  { gradient: 'from-amber-500 via-yellow-500 to-orange-400', shadow: 'shadow-amber-500/30', cta: 'from-amber-600 to-yellow-600' },
+  { gradient: 'from-rose-500 via-pink-500 to-red-400', shadow: 'shadow-rose-500/30', cta: 'from-rose-600 to-pink-600' },
+  { gradient: 'from-blue-600 via-indigo-500 to-violet-500', shadow: 'shadow-blue-500/30', cta: 'from-blue-600 to-indigo-600' },
+  { gradient: 'from-teal-500 via-cyan-500 to-sky-500', shadow: 'shadow-teal-500/30', cta: 'from-teal-600 to-cyan-600' },
 ];
+
+// Badge basado en rank
+function getBadge(rank: number): string | null {
+  if (rank === 1) return 'TOP #1';
+  if (rank === 2) return 'TOP #2';
+  if (rank === 3) return 'TOP #3';
+  return null;
+}
 
 export function CasinoListingSection() {
   return (
@@ -124,10 +132,10 @@ export function CasinoListingSection() {
                   </a>
                 </div>
 
-                {/* Badge */}
-                {scheme.badge && (
+                {/* Badge basado en rank */}
+                {getBadge(rank) && (
                   <div className="absolute top-3 -right-8 bg-gradient-to-r from-yellow-400 to-amber-500 text-white text-[10px] font-black px-10 py-1 rotate-45 shadow-lg">
-                    {scheme.badge}
+                    {getBadge(rank)}
                   </div>
                 )}
               </article>
