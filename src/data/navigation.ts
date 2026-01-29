@@ -7,6 +7,7 @@ export const mainNavItems: NavItem[] = [
     href: '/cazinouri-noi/',
     children: [
       { label: 'Cazinouri Noi', href: '/cazinouri-noi/' },
+      { label: 'Cazinouri Anonime', href: '/cazinouri-anonime/' },
       { label: 'Casino Germania', href: '/cazinouri-online-germania/' },
     ],
   },
@@ -25,6 +26,7 @@ export const mainNavItems: NavItem[] = [
 export const footerNavItems: NavItem[] = [
   { label: 'Acasă', href: '/' },
   { label: 'Cazinouri Noi', href: '/cazinouri-noi/' },
+  { label: 'Cazinouri Anonime', href: '/cazinouri-anonime/' },
   { label: 'Casino Germania', href: '/cazinouri-online-germania/' },
   { label: 'Toate Bonusurile', href: '/bonus/' },
   { label: 'Fără Depunere', href: '/bonus/fara-depunere/' },
