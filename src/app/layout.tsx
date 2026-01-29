@@ -44,9 +44,20 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     locale: 'ro_RO',
     type: 'website',
+    images: [
+      {
+        url: '/images/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Cazinou.io - Top Cazinouri Online Internaționale',
+      },
+    ],
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
+    title: 'Top Cazinouri Online Internaționale 2026',
+    description: 'Clasament actualizat cu cele mai bune cazinouri online internaționale. Bonusuri și recenzii independente.',
+    images: ['/images/og-image.jpg'],
   },
   robots: {
     index: true,
