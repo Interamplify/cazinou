@@ -17,9 +17,9 @@ export function HeroSection() {
         }}
       />
 
-      <div className="relative container mx-auto max-w-7xl py-14 sm:py-18 lg:py-24 px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative container mx-auto max-w-7xl py-8 sm:py-10 lg:py-14 px-4 sm:px-6 lg:px-8 text-center">
         {/* Author line */}
-        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-400 mb-6 animate-fade-in-up opacity-0 stagger-1">
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-400 mb-4 animate-fade-in-up opacity-0 stagger-1">
           <div className="flex items-center gap-2">
             <UserCircle className="h-4 w-4 text-orange-400" />
             <span className="font-medium text-gray-600">{authorInfo.name}</span>
@@ -31,7 +31,7 @@ export function HeroSection() {
         </div>
 
         {/* Main heading */}
-        <h1 className="mb-6 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl xl:text-6xl leading-[1.1] animate-fade-in-up opacity-0 stagger-2">
+        <h1 className="mb-4 text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl lg:text-4xl leading-[1.1] animate-fade-in-up opacity-0 stagger-2">
           Top Cazinouri Online{' '}
           <span className="relative">
             <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">Internaționale</span>
