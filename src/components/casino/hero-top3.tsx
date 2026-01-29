@@ -59,8 +59,8 @@ export function HeroTop3({ casinos }: HeroTop3Props) {
                 href={casino.affiliateUrl}
                 target="_blank"
                 rel="noopener noreferrer sponsored"
-                className={`group relative transition-all duration-300 active:scale-95 ${
-                  isFirst ? 'flex-[1.3] z-10' : 'flex-1'
+                className={`group relative flex-1 transition-all duration-300 active:scale-95 ${
+                  isFirst ? 'z-10' : ''
                 }`}
               >
                 {/* Main card */}
