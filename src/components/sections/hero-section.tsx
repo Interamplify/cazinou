@@ -17,51 +17,48 @@ export function HeroSection() {
         }}
       />
 
-      <div className="relative container mx-auto max-w-7xl py-8 sm:py-10 lg:py-14 px-4 sm:px-6 lg:px-8 text-center">
-        {/* Author line */}
-        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-400 mb-4 animate-fade-in-up opacity-0 stagger-1">
-          <div className="flex items-center gap-2">
-            <UserCircle className="h-4 w-4 text-orange-400" />
-            <span className="font-medium text-gray-600">{authorInfo.name}</span>
+      <div className="relative container mx-auto max-w-7xl pt-8 pb-10 sm:pt-10 sm:pb-12 lg:pt-12 lg:pb-14 px-4 sm:px-6 lg:px-8 text-center">
+        {/* Author line - más compacto */}
+        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-gray-400 mb-5">
+          <div className="flex items-center gap-1.5">
+            <UserCircle className="h-3.5 w-3.5 text-orange-400" />
+            <span className="font-medium text-gray-500">{authorInfo.name}</span>
           </div>
-          <div className="flex items-center gap-2">
-            <CalendarDays className="h-4 w-4 text-orange-400" />
+          <span className="text-gray-300">•</span>
+          <div className="flex items-center gap-1.5">
+            <CalendarDays className="h-3.5 w-3.5 text-orange-400" />
             <span>{authorInfo.lastUpdated}</span>
           </div>
         </div>
 
-        {/* Main heading */}
-        <h1 className="mb-4 text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl lg:text-4xl leading-[1.1] animate-fade-in-up opacity-0 stagger-2">
+        {/* Main heading - tamaño equilibrado */}
+        <h1 className="mb-4 text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl lg:text-4xl xl:text-5xl leading-[1.15]">
           Top Cazinouri Online{' '}
-          <span className="relative">
-            <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">Internaționale</span>
-          </span>{' '}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">Internaționale</span>{' '}
           2026
         </h1>
 
-        {/* Compact intro */}
-        <p className="text-base sm:text-lg text-gray-500 leading-relaxed max-w-3xl mx-auto animate-fade-in-up opacity-0 stagger-3">
-          {introContent.paragraphs[0]} {introContent.paragraphs[1]}
+        {/* Intro más corto */}
+        <p className="text-sm sm:text-base text-gray-500 leading-relaxed max-w-2xl mx-auto mb-8">
+          Clasament actualizat cu cele mai bune cazinouri online accesibile din România.
+          Bonusuri verificate, licențe sigure și retrageri rapide.
         </p>
 
-        {/* TOP 3 PODIUM - Compact */}
-        <div className="mt-8 mb-6 animate-fade-in-up opacity-0 stagger-4">
-          <p className="text-xs text-gray-400 uppercase tracking-wider font-semibold mb-4">🏆 Top 3 Cazinouri</p>
+        {/* TOP 3 PODIUM */}
+        <div className="mb-8">
           <HeroTop3 casinos={casinos} />
         </div>
 
-        {/* CTA rápido */}
-        <div className="animate-fade-in-up opacity-0 stagger-5">
-          <a
-            href="#top-cazinouri"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold text-sm shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/30 hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:-translate-y-0.5"
-          >
-            Vezi Clasamentul Complet
-            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
-          </a>
-        </div>
+        {/* CTA */}
+        <a
+          href="#top-cazinouri"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold text-sm shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/30 hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:-translate-y-0.5"
+        >
+          Vezi Top 20 Complet
+          <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
       </div>
     </section>
   );
