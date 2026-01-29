@@ -22,6 +22,13 @@ export const casinoBonuses = [
     bonus: '100% + 150 Rotiri',
     maxAmount: '7.465 RON',
   },
+  {
+    name: 'GratoWin Casino',
+    href: '/bonus/gratowin-casino/',
+    logo: '/images/casinos/gratowin-casino.webp',
+    bonus: '300% + 50 Rotiri Fără Depunere',
+    maxAmount: '15.000 RON',
+  },
 ];
 
 export const bonusHubFaqs = [
