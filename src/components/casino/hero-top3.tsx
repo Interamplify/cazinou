@@ -45,7 +45,7 @@ export function HeroTop3({ casinos }: HeroTop3Props) {
               }}
             >
               {/* Card */}
-              <div className={`relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl transition-all duration-300 ${
+              <div className={`relative overflow-hidden rounded-t-2xl sm:rounded-t-3xl shadow-2xl transition-all duration-300 ${
                 isFirst
                   ? 'bg-gradient-to-br from-amber-400 via-yellow-500 to-orange-500 shadow-amber-500/40 group-hover:shadow-amber-500/60'
                   : isSecond
@@ -146,7 +146,7 @@ export function HeroTop3({ casinos }: HeroTop3Props) {
               </div>
 
               {/* Podium base */}
-              <div className={`relative overflow-hidden rounded-b-xl sm:rounded-b-2xl -mt-1 ${
+              <div className={`relative overflow-hidden rounded-b-xl sm:rounded-b-2xl ${
                 isFirst
                   ? 'h-12 sm:h-16 bg-gradient-to-b from-orange-500 to-orange-700'
                   : isSecond
@@ -220,7 +220,7 @@ export function HeroTop3Anonymous({ casinos }: HeroTop3AnonymousProps) {
               }`}
             >
               {/* Card */}
-              <div className={`relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl transition-all duration-300 ${
+              <div className={`relative overflow-hidden rounded-t-2xl sm:rounded-t-3xl shadow-2xl transition-all duration-300 ${
                 isFirst
                   ? 'bg-gradient-to-br from-amber-400 via-yellow-500 to-orange-500 shadow-amber-500/40 group-hover:shadow-amber-500/60'
                   : isSecond
@@ -320,7 +320,7 @@ export function HeroTop3Anonymous({ casinos }: HeroTop3AnonymousProps) {
               </div>
 
               {/* Podium base */}
-              <div className={`relative overflow-hidden rounded-b-xl sm:rounded-b-2xl -mt-1 ${
+              <div className={`relative overflow-hidden rounded-b-xl sm:rounded-b-2xl ${
                 isFirst
                   ? 'h-12 sm:h-16 bg-gradient-to-b from-orange-500 to-orange-700'
                   : isSecond
