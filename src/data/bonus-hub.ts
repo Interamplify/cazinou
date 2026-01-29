@@ -2,6 +2,13 @@
 
 export const casinoBonuses = [
   {
+    name: 'iWild Casino',
+    href: '/bonus/iwild-casino/',
+    logo: '/images/casinos/iwild-casino.webp',
+    bonus: '550% + 550 Rotiri',
+    maxAmount: '20.000 RON',
+  },
+  {
     name: 'Billionairespin Casino',
     href: '/bonus/billionairespin-casino/',
     logo: '/images/casinos/billionairespin-casino.webp',

@@ -9,7 +9,7 @@ export function HeroSection() {
           <ol className="flex items-center justify-center gap-1.5 text-sm font-mono text-gray-400">
             <li>
               <a href="/" className="hover:text-orange-600 transition-colors">
-                Acas&#259;
+                Acasă
               </a>
             </li>
             <li>/</li>
@@ -19,7 +19,7 @@ export function HeroSection() {
               </a>
             </li>
             <li>/</li>
-            <li className="text-gray-900 font-semibold">Billionairespin Casino Bonus</li>
+            <li className="text-gray-900 font-semibold">iWild Casino Bonus</li>
           </ol>
         </nav>
 
@@ -30,43 +30,43 @@ export function HeroSection() {
         </div>
 
         {/* Main heading */}
-        <h1 className="mb-5 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl font-mono leading-[1.1]">
-          Bonus <span className="text-orange-500">Billionairespin Casino</span> 2026
+        <h1 className="mb-5 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl font-mono leading-[1.1] max-w-4xl mx-auto">
+          Bonus <span className="text-orange-500">iWild Casino</span> 2026
         </h1>
 
         {/* Intro */}
         <p className="text-base sm:text-lg text-gray-500 leading-relaxed max-w-3xl mx-auto mb-8">
-          Pachetul de bun venit Billionairespin Casino &#238;&#539;i ofer&#259; un bonus masiv de 255%
-          p&#226;n&#259; la 2.250 RON &#537;i 250 rotiri gratuite distribuite pe primele
-          3 depuneri. Un start ideal pentru juc&#259;torii din Rom&#226;nia care vor
-          s&#259; exploreze o platform&#259; crypto-friendly cu rulaj competitiv.
+          Pachetul de bun venit iWild Casino îți oferă un bonus masiv de 550%
+          până la 20.000 RON și 550 rotiri gratuite distribuite pe primele
+          4 depuneri. Ideal pentru jucătorii care vor să exploreze peste 6000 de jocuri
+          pe o platformă crypto-friendly cu magazin de recompense și program VIP pe 5 niveluri.
         </p>
 
         {/* Quick stats pills */}
         <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
           <div className="flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3 py-1.5 shadow-sm">
             <TrendingUp className="h-3.5 w-3.5 text-orange-500" />
-            <span className="text-xs font-mono font-semibold text-gray-700">255% Bonus</span>
+            <span className="text-xs font-mono font-semibold text-gray-700">550% Bonus</span>
           </div>
           <div className="flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3 py-1.5 shadow-sm">
             <Award className="h-3.5 w-3.5 text-amber-500" />
-            <span className="text-xs font-mono font-semibold text-gray-700">2.250 RON Maxim</span>
+            <span className="text-xs font-mono font-semibold text-gray-700">20.000 RON Maxim</span>
           </div>
           <div className="flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3 py-1.5 shadow-sm">
             <Sparkles className="h-3.5 w-3.5 text-green-500" />
-            <span className="text-xs font-mono font-semibold text-gray-700">250 Rotiri Gratuite</span>
+            <span className="text-xs font-mono font-semibold text-gray-700">550 Rotiri Gratuite</span>
           </div>
         </div>
 
         {/* CTA Button */}
         <div className="flex justify-center">
           <a
-            href="/go/billionairespin-casino"
+            href="/go/iwild-casino"
             target="_blank"
             rel="noopener noreferrer sponsored"
             className="inline-flex items-center justify-center gap-2 rounded-xl bg-orange-500 px-8 py-4 text-base font-bold font-mono text-white hover:bg-orange-600 transition-all hover:scale-105 shadow-lg hover:shadow-xl"
           >
-            Revindic&#259; Bonusul
+            Revendică Bonusul
           </a>
         </div>
       </div>
