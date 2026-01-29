@@ -111,7 +111,7 @@ function GameCard({ game }: { game: (typeof featuredGames)[0] }) {
           href="#cazinouri"
           className="block w-full text-center rounded-xl bg-orange-500 hover:bg-orange-600 text-white px-4 py-2.5 text-xs font-bold font-mono transition-colors"
         >
-          Joac&#259; Acum
+          Joacă Acum
         </a>
       </div>
     </div>
@@ -126,10 +126,10 @@ export function GamesShowcaseSection() {
         <div className="mb-10 text-center">
           <div className="w-10 h-1 bg-orange-500 rounded-full mb-4 mx-auto" />
           <h2 className="text-2xl sm:text-3xl font-bold font-mono text-gray-900 mb-3">
-            Jocuri de Lozuri R&#259;zuibile Recomandate
+            Jocuri de Lozuri Răzuibile Recomandate
           </h2>
           <p className="text-base text-gray-500 max-w-2xl mx-auto">
-            Selec&#539;ia noastr&#259; cu cele mai bune jocuri de scratch cards disponibile la cazinouri interna&#539;ionale
+            Selecția noastră cu cele mai bune jocuri de scratch cards disponibile la cazinouri internaționale
           </p>
         </div>
 

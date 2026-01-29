@@ -6,7 +6,7 @@ const picks = [
   {
     label: 'Cel Mai Bun RTP',
     slug: 'iwild-casino',
-    reason: 'Lozuri cu RTP de p\u00E2n\u0103 la 97% de la Evoplay, BGaming \u0219i Hacksaw Gaming.',
+    reason: 'Lozuri cu RTP de până la 97% de la Evoplay, BGaming și Hacksaw Gaming.',
     Icon: Trophy,
     color: 'border-green-200 bg-green-50/30',
     iconBg: 'bg-green-100',
@@ -15,7 +15,7 @@ const picks = [
   {
     label: 'Cele Mai Multe Jocuri',
     slug: 'velobet-casino',
-    reason: 'Peste 60 de lozuri r\u0103zuibile cu teme variate \u2014 numere, animale, sporturi, money.',
+    reason: 'Peste 60 de lozuri răzuibile cu teme variate — numere, animale, sporturi, money.',
     Icon: Gamepad2,
     color: 'border-blue-200 bg-blue-50/30',
     iconBg: 'bg-blue-100',
@@ -24,7 +24,7 @@ const picks = [
   {
     label: 'Cel Mai Bun pentru Crypto',
     slug: 'fairspin-casino',
-    reason: 'Casino crypto cu lozuri r\u0103zuibile, retrageri instant BTC/ETH/USDT.',
+    reason: 'Casino crypto cu lozuri răzuibile, retrageri instant BTC/ETH/USDT.',
     Icon: Coins,
     color: 'border-amber-200 bg-amber-50/30',
     iconBg: 'bg-amber-100',
@@ -33,7 +33,7 @@ const picks = [
   {
     label: 'Premii Mari',
     slug: 'fortunejack-casino',
-    reason: 'Scratch games cu premii maxime de p\u00E2n\u0103 la 500x \u0219i jackpot-uri progresive.',
+    reason: 'Scratch games cu premii maxime de până la 500x și jackpot-uri progresive.',
     Icon: Sparkles,
     color: 'border-orange-200 bg-orange-50/30',
     iconBg: 'bg-orange-100',
@@ -42,7 +42,7 @@ const picks = [
   {
     label: 'Mode Demo Gratuit',
     slug: 'ggbet-casino',
-    reason: 'Testeaz\u0103 toate lozurile \u00EEn mod gratuit \u00EEnainte de a juca pe bani reali.',
+    reason: 'Testează toate lozurile în mod gratuit înainte de a juca pe bani reali.',
     Icon: Gift,
     color: 'border-purple-200 bg-purple-50/30',
     iconBg: 'bg-purple-100',
@@ -51,7 +51,7 @@ const picks = [
   {
     label: 'Cel Mai Rapid',
     slug: 'velobet-casino',
-    reason: 'Retrageri e-wallet \u0219i crypto \u00EEn sub 24 ore. Lozuri cu rezultate instant.',
+    reason: 'Retrageri e-wallet și crypto în sub 24 ore. Lozuri cu rezultate instant.',
     Icon: Zap,
     color: 'border-cyan-200 bg-cyan-50/30',
     iconBg: 'bg-cyan-100',
@@ -70,10 +70,10 @@ export function QuickPicksSection() {
         <div className="mb-8 text-center">
           <div className="w-10 h-1 bg-orange-500 rounded-full mb-4 mx-auto" />
           <h2 className="text-2xl sm:text-3xl font-bold font-mono text-gray-900">
-            Recomand&#259;ri Rapide &#8212; Cel Mai Bun Casino Pentru Lozuri R&#259;zuibile
+            Recomandări Rapide — Cel Mai Bun Casino Pentru Lozuri Răzuibile
           </h2>
           <p className="text-base text-gray-500 mt-2 max-w-2xl mx-auto">
-            Fiecare juc&#259;tor caut&#259; altceva. Alege direct &#238;n func&#539;ie de ce conteaz&#259; cel mai mult pentru tine:
+            Fiecare jucător caută altceva. Alege direct în funcție de ce contează cel mai mult pentru tine:
           </p>
         </div>
 
@@ -110,7 +110,7 @@ export function QuickPicksSection() {
                   <div>
                     <p className="text-sm font-bold font-mono text-gray-900">{casino.name}</p>
                     <p className="text-xs text-gray-500 font-mono">
-                      Rulaj x{casino.wageringRequirement} &#183; {casino.license}
+                      Rulaj x{casino.wageringRequirement} · {casino.license}
                     </p>
                   </div>
                 </div>
@@ -123,7 +123,7 @@ export function QuickPicksSection() {
                   rel="noopener noreferrer sponsored"
                   className="inline-flex items-center gap-1.5 rounded-xl bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 text-xs font-bold font-mono transition-colors"
                 >
-                  Joac&#259; Acum <ExternalLink className="h-3 w-3" />
+                  Joacă Acum <ExternalLink className="h-3 w-3" />
                 </a>
               </div>
             );

@@ -7,10 +7,10 @@ export function RtpVolatilitySection() {
         <div className="mb-10 text-center">
           <div className="w-10 h-1 bg-orange-500 rounded-full mb-4 mx-auto" />
           <h2 className="mb-4 text-2xl sm:text-3xl font-extrabold tracking-tight text-gray-900 font-mono">
-            RTP, Volatilitate &#537;i Premii la Lozurile Online
+            RTP, Volatilitate și Premii la Lozurile Online
           </h2>
           <p className="mx-auto max-w-3xl text-base leading-relaxed text-gray-700">
-            &#206;n&#539;elege cum func&#539;ioneaz&#259; returnul la juc&#259;tor, volatilitatea &#537;i structura premiilor
+            Înțelege cum funcționează returnul la jucător, volatilitatea și structura premiilor
           </p>
         </div>
 
@@ -25,9 +25,9 @@ export function RtpVolatilitySection() {
             </div>
 
             <p className="text-sm text-gray-700 leading-relaxed mb-4">
-              RTP-ul lozurilor online variaz&#259; &#238;ntre 85% &#537;i 97%, majoritatea situ&#226;ndu-se &#238;n
-              intervalul 90-95%. Un RTP de 95% &#238;nseamn&#259; c&#259;, teoretic, din 100€ paria&#539;i, 95€ se
-              &#238;ntorc la juc&#259;tori pe termen lung. Caut&#259; lozuri cu RTP &gt; 94%.
+              RTP-ul lozurilor online variază între 85% și 97%, majoritatea situându-se în
+              intervalul 90-95%. Un RTP de 95% înseamnă că, teoretic, din 100€ pariați, 95€ se
+              întorc la jucători pe termen lung. Caută lozuri cu RTP {'>'} 94%.
             </p>
 
             {/* RTP Range Visual */}
@@ -47,7 +47,7 @@ export function RtpVolatilitySection() {
                 />
               </div>
               <p className="text-xs text-center text-gray-500 font-mono">
-                Zona recomandat&#259;: 90-95%
+                Zona recomandată: 90-95%
               </p>
             </div>
           </article>
@@ -62,8 +62,8 @@ export function RtpVolatilitySection() {
             </div>
 
             <p className="text-sm text-gray-700 leading-relaxed mb-4">
-              Volatilitatea indic&#259; frecven&#539;a &#537;i m&#259;rimea c&#226;&#537;tigurilor: (1) Sc&#259;zut&#259;: c&#226;&#537;tiguri
-              frecvente, mici; (2) Medie: balans &#238;ntre frecven&#539;&#259; &#537;i valoare; (3) Ridicat&#259;: c&#226;&#537;tiguri
+              Volatilitatea indică frecvența și mărimea câștigurilor: (1) Scăzută: câștiguri
+              frecvente, mici; (2) Medie: balans între frecvență și valoare; (3) Ridicată: câștiguri
               rare, mari. Majoritatea lozurilor au volatilitate medie.
             </p>
 
@@ -71,7 +71,7 @@ export function RtpVolatilitySection() {
             <div className="flex flex-wrap gap-2">
               <span className="inline-flex items-center gap-1.5 rounded-full bg-green-100 px-3 py-1.5 text-xs font-semibold text-green-700">
                 <span className="h-2 w-2 rounded-full bg-green-500" />
-                Sc&#259;zut&#259;
+                Scăzută
               </span>
               <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-100 px-3 py-1.5 text-xs font-semibold text-amber-700">
                 <span className="h-2 w-2 rounded-full bg-amber-500" />
@@ -79,7 +79,7 @@ export function RtpVolatilitySection() {
               </span>
               <span className="inline-flex items-center gap-1.5 rounded-full bg-red-100 px-3 py-1.5 text-xs font-semibold text-red-700">
                 <span className="h-2 w-2 rounded-full bg-red-500" />
-                Ridicat&#259;
+                Ridicată
               </span>
             </div>
           </article>
@@ -94,9 +94,9 @@ export function RtpVolatilitySection() {
             </div>
 
             <p className="text-sm text-gray-700 leading-relaxed mb-4">
-              Premiile maxime variaz&#259; &#238;ntre 100x &#537;i 1000x miza. Lozuri clasice: premii p&#226;n&#259; la 500x.
-              Lozuri cu jackpot progresiv: premii nelimitate. Verific&#259; tabela de pl&#259;&#539;i (paytable)
-              pentru structura exact&#259; a fiec&#259;rui joc.
+              Premiile maxime variază între 100x și 1000x miza. Lozuri clasice: premii până la 500x.
+              Lozuri cu jackpot progresiv: premii nelimitate. Verifică tabela de plăți (paytable)
+              pentru structura exactă a fiecărui joc.
             </p>
 
             {/* Example Calculation */}

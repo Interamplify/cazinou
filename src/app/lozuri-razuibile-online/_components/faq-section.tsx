@@ -13,10 +13,10 @@ export function FaqSection() {
         <div className="mb-8 text-center">
           <div className="w-10 h-1 bg-orange-500 rounded-full mb-4 mx-auto" />
           <h2 className="text-2xl sm:text-3xl font-bold font-mono text-gray-900">
-            &#206;ntreb&#259;ri Frecvente (FAQ)
+            Întrebări Frecvente (FAQ)
           </h2>
           <p className="text-base text-gray-500 mt-2 max-w-2xl mx-auto">
-            R&#259;spunsuri la cele mai comune &#238;ntreb&#259;ri despre lozurile razuibile online
+            Răspunsuri la cele mai comune întrebări despre lozurile razuibile online
           </p>
         </div>
 
