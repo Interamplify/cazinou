@@ -1,5 +1,5 @@
 import { authorInfo, introContent } from '@/data/content';
-import { CalendarDays, UserCircle, Shield, Star, Zap } from 'lucide-react';
+import { CalendarDays, UserCircle } from 'lucide-react';
 
 export function HeroSection() {
   return (
@@ -14,22 +14,6 @@ export function HeroSection() {
       />
 
       <div className="relative container mx-auto max-w-7xl py-14 sm:py-18 lg:py-24 px-4 sm:px-6 lg:px-8 text-center">
-        {/* Trust badges */}
-        <div className="flex flex-wrap items-center justify-center gap-3 mb-8 animate-fade-in">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/80 border border-gray-200 text-xs font-medium text-gray-600 shadow-sm backdrop-blur-sm">
-            <Shield className="h-3.5 w-3.5 text-emerald-500" />
-            Recenzii Independente
-          </span>
-          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/80 border border-gray-200 text-xs font-medium text-gray-600 shadow-sm backdrop-blur-sm">
-            <Star className="h-3.5 w-3.5 text-amber-500" />
-            20+ Cazinouri Testate
-          </span>
-          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/80 border border-gray-200 text-xs font-medium text-gray-600 shadow-sm backdrop-blur-sm">
-            <Zap className="h-3.5 w-3.5 text-orange-500" />
-            Actualizat Lunar
-          </span>
-        </div>
-
         {/* Author line */}
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-400 mb-6 animate-fade-in-up opacity-0 stagger-1">
           <div className="flex items-center gap-2">
