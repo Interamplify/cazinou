@@ -1,3 +1,6 @@
+'use client';
+
+import * as React from 'react';
 import Image from 'next/image';
 import { Star, ExternalLink } from 'lucide-react';
 import { getCasinosBySlugs } from '@/lib/data-helpers';
@@ -7,6 +10,12 @@ import { ColorfulMobileList } from '@/components/casino/colorful-mobile-card';
 
 export function CasinoListingSection() {
   const casinos = getCasinosBySlugs(cazinouriNoiSlugs);
+  const [showAll, setShowAll] = React.useState(false);
+  const initialCount = 10;
+
+  const visibleCasinos = showAll ? casinos : casinos.slice(0, initialCount);
+  const remainingCount = casinos.length - initialCount;
+  const hasMore = remainingCount > 0 && !showAll;
 
   return (
     <section id="top-cazinouri" className="py-14 lg:py-20">
@@ -23,7 +32,7 @@ export function CasinoListingSection() {
         </div>
 
         {/* ── Mobile Cards - COLORFUL ── */}
-        <ColorfulMobileList casinos={casinos} />
+        <ColorfulMobileList casinos={casinos} initialCount={initialCount} showMoreEnabled={true} />
 
         {/* ── Desktop Table ── */}
         <div className="hidden lg:block overflow-x-auto rounded-2xl border border-gray-200 shadow-sm">
@@ -55,7 +64,7 @@ export function CasinoListingSection() {
               </tr>
             </thead>
             <tbody>
-              {casinos.map((casino, i) => {
+              {visibleCasinos.map((casino, i) => {
                 const rank = i + 1;
                 return (
                   <tr
@@ -143,6 +152,22 @@ export function CasinoListingSection() {
             </tbody>
           </table>
         </div>
+
+        {/* Show More Button - Desktop */}
+        {hasMore && (
+          <div className="hidden lg:flex justify-center mt-8">
+            <button
+              onClick={() => setShowAll(true)}
+              className="group relative inline-flex items-center justify-center gap-3 px-10 py-4 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white font-bold text-base shadow-2xl shadow-slate-900/30 hover:shadow-slate-900/50 transition-all duration-300 hover:scale-105 overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 -skew-x-12 group-hover:animate-shimmer" />
+              <span className="relative z-10">Vezi {remainingCount} Cazinouri Mai Mult</span>
+              <svg className="relative z-10 h-5 w-5 transition-transform group-hover:translate-y-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+          </div>
+        )}
 
         <p className="text-xs text-gray-400 text-center mt-6 leading-relaxed">
           * Termenii și condițiile se aplică tuturor ofertelor. Doar 18+. Joacă responsabil.

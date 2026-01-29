@@ -1,4 +1,6 @@
 import { CalendarDays, Shield, EyeOff, Bitcoin } from 'lucide-react';
+import { anonymousCasinos } from '@/data/cazinouri-anonime';
+import { HeroTop3Anonymous } from '@/components/casino/hero-top3';
 
 export function HeroSection() {
   return (
@@ -32,7 +34,7 @@ export function HeroSection() {
         </p>
 
         {/* Quick stats pills */}
-        <div className="flex flex-wrap items-center justify-center gap-3">
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
           <div className="flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3 py-1.5 shadow-sm">
             <EyeOff className="h-3.5 w-3.5 text-purple-500" />
             <span className="text-xs font-mono font-semibold text-gray-700">Fără verificare KYC</span>
@@ -46,6 +48,23 @@ export function HeroSection() {
             <span className="text-xs font-mono font-semibold text-gray-700">Provably Fair</span>
           </div>
         </div>
+
+        {/* TOP 3 COMPACTO */}
+        <div className="mb-6">
+          <p className="text-xs text-gray-400 uppercase tracking-wider font-semibold mb-4">🏆 Top 3 Cazinouri Anonime</p>
+          <HeroTop3Anonymous casinos={anonymousCasinos} />
+        </div>
+
+        {/* CTA */}
+        <a
+          href="#top-cazinouri"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold text-sm shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/30 hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:-translate-y-0.5"
+        >
+          Vezi Clasamentul Complet
+          <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
       </div>
     </section>
   );

@@ -1,3 +1,6 @@
+'use client';
+
+import * as React from 'react';
 import Image from 'next/image';
 import { Star, ExternalLink } from 'lucide-react';
 import { RATING_MAX } from '@/lib/constants';
@@ -7,13 +10,23 @@ import { ColorfulMobileList } from '@/components/casino/colorful-mobile-card';
 interface TopListProps {
   casinos: Casino[];
   trackingSource?: string;
+  initialCount?: number;
+  showMoreEnabled?: boolean;
 }
 
-export function TopList({ casinos, trackingSource }: TopListProps) {
+export function TopList({ casinos, trackingSource, initialCount = 10, showMoreEnabled = true }: TopListProps) {
+  const [showAll, setShowAll] = React.useState(false);
+
+  const visibleCasinos = showMoreEnabled && !showAll
+    ? casinos.slice(0, initialCount)
+    : casinos;
+  const remainingCount = casinos.length - initialCount;
+  const hasMore = showMoreEnabled && remainingCount > 0 && !showAll;
+
   return (
     <>
       {/* Mobile cards - COLORFUL */}
-      <ColorfulMobileList casinos={casinos} />
+      <ColorfulMobileList casinos={casinos} initialCount={initialCount} showMoreEnabled={showMoreEnabled} />
 
       {/* Desktop HTML table (>= lg) — PREMIUM DESIGN */}
       <div className="hidden lg:block overflow-x-auto rounded-3xl border-0 shadow-2xl shadow-slate-200/50">
@@ -33,15 +46,15 @@ export function TopList({ casinos, trackingSource }: TopListProps) {
             </tr>
           </thead>
           <tbody>
-            {casinos.map((casino, i) => {
+            {visibleCasinos.map((casino, i) => {
               const rank = i + 1;
               const isTop3 = rank <= 3;
 
-              // Colores para el top 3
+              // Colores para el top 3 (sin bordes)
               const rowColors = {
-                1: 'bg-gradient-to-r from-amber-50 via-orange-50 to-amber-50 border-l-4 border-l-orange-500',
-                2: 'bg-gradient-to-r from-slate-50 via-gray-50 to-slate-50 border-l-4 border-l-slate-400',
-                3: 'bg-gradient-to-r from-amber-50/50 via-orange-50/50 to-amber-50/50 border-l-4 border-l-amber-600',
+                1: 'bg-gradient-to-r from-amber-50 via-orange-50 to-amber-50',
+                2: 'bg-gradient-to-r from-slate-50 via-gray-50 to-slate-50',
+                3: 'bg-gradient-to-r from-amber-50/50 via-orange-50/50 to-amber-50/50',
               };
 
               const rankColors = {
@@ -168,6 +181,23 @@ export function TopList({ casinos, trackingSource }: TopListProps) {
           </tbody>
         </table>
       </div>
+
+      {/* Show More Button - Desktop */}
+      {hasMore && (
+        <div className="hidden lg:flex justify-center mt-8">
+          <button
+            onClick={() => setShowAll(true)}
+            className="group relative inline-flex items-center justify-center gap-3 px-10 py-4 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white font-bold text-base shadow-2xl shadow-slate-900/30 hover:shadow-slate-900/50 transition-all duration-300 hover:scale-105 overflow-hidden"
+          >
+            {/* Shine effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 -skew-x-12 group-hover:animate-shimmer" />
+            <span className="relative z-10">Vezi {remainingCount} Cazinouri Mai Mult</span>
+            <svg className="relative z-10 h-5 w-5 transition-transform group-hover:translate-y-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+        </div>
+      )}
 
       {/* Disclaimer */}
       <p className="text-xs text-gray-400 text-center mt-6 leading-relaxed">

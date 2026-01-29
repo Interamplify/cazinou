@@ -15,12 +15,15 @@ import { FAQSection } from '@/components/sections/faq-section';
 import { ResponsibleGamingSection } from '@/components/sections/responsible-gaming-section';
 import { JsonLd } from '@/components/shared/json-ld';
 import { StickyToc } from '@/components/shared/sticky-toc';
+import { StickyMobileBonus } from '@/components/casino/sticky-mobile-bonus';
 import { generateArticleJsonLd, generateBreadcrumbJsonLd } from '@/lib/seo-helpers';
 import { tocItems } from '@/data/content';
+import { getTopCasinos } from '@/lib/data-helpers';
 
 export default function HomePage() {
   const articleJsonLd = generateArticleJsonLd();
   const breadcrumbJsonLd = generateBreadcrumbJsonLd();
+  const topCasino = getTopCasinos(1)[0]; // Casino #1 for sticky bonus
 
   return (
     <article className="bg-white">
@@ -29,6 +32,9 @@ export default function HomePage() {
       <HeroSection />
       <StickyToc items={tocItems} />
       <CasinoListingSection />
+
+      {/* Sticky Mobile Bonus */}
+      <StickyMobileBonus casino={topCasino} label="Bonus de la Semana" />
       <TopReviewsSection />
       <CategoryPicksSection />
       <MethodologySection />

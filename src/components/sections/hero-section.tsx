@@ -1,7 +1,11 @@
 import { authorInfo, introContent } from '@/data/content';
 import { CalendarDays, UserCircle } from 'lucide-react';
+import { getTopCasinos } from '@/lib/data-helpers';
+import { HeroTop3 } from '@/components/casino/hero-top3';
 
 export function HeroSection() {
+  const casinos = getTopCasinos(3);
+
   return (
     <section className="relative overflow-hidden">
       {/* Background con gradient y pattern sutil */}
@@ -40,13 +44,19 @@ export function HeroSection() {
           {introContent.paragraphs[0]} {introContent.paragraphs[1]}
         </p>
 
+        {/* TOP 3 PODIUM - Compact */}
+        <div className="mt-8 mb-6 animate-fade-in-up opacity-0 stagger-4">
+          <p className="text-xs text-gray-400 uppercase tracking-wider font-semibold mb-4">🏆 Top 3 Cazinouri</p>
+          <HeroTop3 casinos={casinos} />
+        </div>
+
         {/* CTA rápido */}
-        <div className="mt-8 animate-fade-in-up opacity-0 stagger-4">
+        <div className="animate-fade-in-up opacity-0 stagger-5">
           <a
             href="#top-cazinouri"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold text-sm shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/30 hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:-translate-y-0.5"
           >
-            Vezi Clasamentul
+            Vezi Clasamentul Complet
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
             </svg>
