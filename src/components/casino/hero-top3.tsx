@@ -23,7 +23,7 @@ export function HeroTop3({ casinos }: HeroTop3Props) {
         <div className="w-64 h-64 bg-gradient-to-r from-amber-400/20 via-orange-500/20 to-amber-400/20 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative flex items-end justify-center gap-3 sm:gap-4 lg:gap-6 max-w-3xl mx-auto">
+      <div className="relative flex items-end justify-center gap-4 sm:gap-5 lg:gap-8 max-w-4xl mx-auto px-2">
         {podiumOrder.map((casino, idx) => {
           const isFirst = idx === 1;
           const isSecond = idx === 0;
@@ -37,8 +37,8 @@ export function HeroTop3({ casinos }: HeroTop3Props) {
               rel="noopener noreferrer sponsored"
               className={`group relative flex-1 transition-all duration-500 hover:z-20 ${
                 isFirst
-                  ? 'max-w-[160px] sm:max-w-[200px] z-10 -mt-4 hover:scale-110'
-                  : 'max-w-[130px] sm:max-w-[160px] hover:scale-105'
+                  ? 'max-w-[180px] sm:max-w-[240px] lg:max-w-[280px] z-10 -mt-4 hover:scale-110'
+                  : 'max-w-[150px] sm:max-w-[200px] lg:max-w-[220px] hover:scale-105'
               }`}
               style={{
                 animationDelay: isFirst ? '0s' : isSecond ? '0.1s' : '0.2s',
@@ -201,7 +201,7 @@ export function HeroTop3Anonymous({ casinos }: HeroTop3AnonymousProps) {
         <div className="w-64 h-64 bg-gradient-to-r from-amber-400/20 via-orange-500/20 to-amber-400/20 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative flex items-end justify-center gap-3 sm:gap-4 lg:gap-6 max-w-3xl mx-auto">
+      <div className="relative flex items-end justify-center gap-4 sm:gap-5 lg:gap-8 max-w-4xl mx-auto px-2">
         {podiumOrder.map((casino, idx) => {
           const isFirst = idx === 1;
           const isSecond = idx === 0;
@@ -215,8 +215,8 @@ export function HeroTop3Anonymous({ casinos }: HeroTop3AnonymousProps) {
               rel="noopener noreferrer sponsored"
               className={`group relative flex-1 transition-all duration-500 hover:z-20 ${
                 isFirst
-                  ? 'max-w-[160px] sm:max-w-[200px] z-10 -mt-4 hover:scale-110'
-                  : 'max-w-[130px] sm:max-w-[160px] hover:scale-105'
+                  ? 'max-w-[180px] sm:max-w-[240px] lg:max-w-[280px] z-10 -mt-4 hover:scale-110'
+                  : 'max-w-[150px] sm:max-w-[200px] lg:max-w-[220px] hover:scale-105'
               }`}
             >
               {/* Card */}
