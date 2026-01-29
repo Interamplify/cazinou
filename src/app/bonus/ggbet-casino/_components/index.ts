@@ -1,0 +1,10 @@
+export { HeroSection } from './hero-section';
+export { WelcomeBonusSection } from './welcome-bonus-section';
+export { NoDepositBonusSection } from './no-deposit-bonus-section';
+export { ActivationGuideSection } from './activation-guide-section';
+export { WageringSection } from './wagering-section';
+export { GamesSection } from './games-section';
+export { EsportsSection } from './esports-section';
+export { PaymentMethodsSection } from './payment-methods-section';
+export { FaqSection } from './faq-section';
+export { ResponsibleGamingSection } from './responsible-gaming-section';

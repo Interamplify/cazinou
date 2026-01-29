@@ -29,6 +29,13 @@ export const casinoBonuses = [
     bonus: '300% + 50 Rotiri Fără Depunere',
     maxAmount: '15.000 RON',
   },
+  {
+    name: 'GGBet Casino',
+    href: '/bonus/ggbet-casino/',
+    logo: '/images/casinos/ggbet-casino.webp',
+    bonus: '200% + 900 Rotiri + 50 Fără Depunere',
+    maxAmount: '12.000 RON',
+  },
 ];
 
 export const bonusHubFaqs = [
