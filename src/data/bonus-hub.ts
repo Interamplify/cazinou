@@ -15,6 +15,13 @@ export const casinoBonuses = [
     bonus: '255% + 250 Rotiri',
     maxAmount: '2.250 RON',
   },
+  {
+    name: 'Megapari Casino',
+    href: '/bonus/megapari-casino/',
+    logo: '/images/casinos/megapari-casino.webp',
+    bonus: '100% + 150 Rotiri',
+    maxAmount: '7.465 RON',
+  },
 ];
 
 export const bonusHubFaqs = [
