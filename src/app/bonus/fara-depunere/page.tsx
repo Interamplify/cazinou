@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/constants';
-import { generateFAQJsonLd } from '@/lib/seo-helpers';
+import { generateFAQJsonLd, generateItemListJsonLd } from '@/lib/seo-helpers';
 import { JsonLd } from '@/components/shared/json-ld';
-import { faraDepunereFaqs, tocItems } from '@/data/bonus-fara-depunere';
+import { faraDepunereFaqs, faraDepunereSlugs, tocItems } from '@/data/bonus-fara-depunere';
+import { getCasinosBySlugs } from '@/lib/data-helpers';
 
 import { HeroSection } from './_components/hero-section';
 import { StickyToc } from './_components/sticky-toc';
@@ -35,6 +36,18 @@ export const metadata: Metadata = {
 
 export default function BonusFaraDepunerePage() {
   const faqJsonLd = generateFAQJsonLd(faraDepunereFaqs);
+
+  const casinos = getCasinosBySlugs(faraDepunereSlugs);
+  const itemListJsonLd = generateItemListJsonLd(
+    casinos.map((casino) => ({
+      name: casino.name,
+      url: casino.affiliateUrl,
+      image: `${SITE_URL}${casino.logo}`,
+      description: `${casino.bonusTitle} - Rulaj x${casino.wageringRequirement}`,
+    })),
+    'Top 10 Cazinouri cu Bonus Fără Depunere 2026',
+    `${SITE_URL}/bonus/fara-depunere/`
+  );
 
   const articleJsonLd = {
     '@context': 'https://schema.org',
@@ -70,6 +83,7 @@ export default function BonusFaraDepunerePage() {
       <JsonLd data={articleJsonLd} />
       <JsonLd data={breadcrumbJsonLd} />
       <JsonLd data={faqJsonLd} />
+      <JsonLd data={itemListJsonLd} />
 
       <HeroSection />
       <StickyToc items={tocItems} />

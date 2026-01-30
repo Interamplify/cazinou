@@ -31,7 +31,7 @@ export function HeroSection() {
 
         {/* Main heading */}
         <h1 className="mb-4 text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl lg:text-4xl xl:text-5xl leading-[1.15]">
-          Bonus <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">Fără Depunere</span> 2026
+          Top Cazinouri Internaționale cu Bonus <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">Fără Depunere</span> 2026
         </h1>
 
         {/* Intro */}

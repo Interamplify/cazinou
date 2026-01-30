@@ -103,3 +103,25 @@ export function generateFAQJsonLd(faqs: { question: string; answer: string }[]) 
     })),
   };
 }
+
+export function generateItemListJsonLd(
+  items: { name: string; url: string; image?: string; description?: string }[],
+  listName: string,
+  listUrl: string
+) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: listName,
+    url: listUrl,
+    numberOfItems: items.length,
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      url: item.url,
+      ...(item.image && { image: item.image }),
+      ...(item.description && { description: item.description }),
+    })),
+  };
+}

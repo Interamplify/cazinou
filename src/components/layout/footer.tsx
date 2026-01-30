@@ -77,6 +77,16 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Affiliate Disclosure */}
+        <div className="border-t border-gray-100 py-5">
+          <p className="text-xs text-gray-400 leading-relaxed max-w-4xl mx-auto text-center">
+            <strong className="text-gray-500">Disclosure:</strong> Acest site conține link-uri de afiliere.
+            Dacă te înregistrezi printr-un link de pe cazinou.io, putem primi un comision fără costuri suplimentare pentru tine.
+            Acest lucru ne ajută să menținem site-ul gratuit și să oferim recenzii independente.
+            Recomandările noastre nu sunt influențate de parteneriatele de afiliere.
+          </p>
+        </div>
+
         <div className="border-t border-gray-100 py-6 text-center">
           <p className="text-sm text-gray-400">
             &copy; {new Date().getFullYear()} {siteConfig.name}. Toate drepturile rezervate.
